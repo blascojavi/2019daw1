@@ -1,0 +1,56 @@
+* {}
+
+
+/* Hexa annotation */
+
+body {
+    background: #DEB887;
+}
+
+
+/* X11/svg annnotation */
+
+header {
+    background: burlywood;
+    color: cornsilk;
+}
+
+
+/* x11/SVG annotation */
+
+nav {
+    background: mistyrose;
+    color: darkcyan;
+}
+
+
+/* RGB annotation */
+
+aside {
+    background: #FFF5EE;
+    color: #008B8B;
+}
+
+
+/* RGB annotation */
+
+footer {
+    background: rgb(17, 7, 0);
+}
+
+
+/* HSL annotation*/
+
+section,
+article {
+    background: hsl(44, 27%, 65%);
+    color: hsl(44, 3%, 97%);
+}
+
+h2 {
+    color: hsl(44, 6%, 20%);
+}
+
+h3 {
+    color: hsl(44, 6%, 25%);
+}

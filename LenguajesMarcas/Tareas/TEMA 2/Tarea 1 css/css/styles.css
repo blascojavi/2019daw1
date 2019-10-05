@@ -57,3 +57,7 @@ td strong {
 #adicional a {
     color: green;
 }
+
+table tr {
+    border: 1pxsolid black;
+}
