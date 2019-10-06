@@ -35,7 +35,7 @@ public class NumDiasSegunMes {
                 case "septiembre":
                 case "noviembre":
                     System.out.println("30 dias");
-                
+                break;
                 default: 
                     System.out.println("Mes incorrecto");
                 break;
