@@ -1,0 +1,25 @@
+*{
+    box-sizing: border-box; 
+    margin: o auto; 
+}
+.cabecera{
+    display: inline;
+}
+.menu, .contenido , .principal , .secundario{
+    float: left; 
+}
+.menu{
+    background: blue; 
+}
+.contenido {
+    background: red;
+}
+.principal{
+    background: yellow;
+}
+.secundario{
+    background: grey;
+}
+.cabecera{
+    background: green;
+}
