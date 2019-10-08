@@ -1,0 +1,40 @@
+* {
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+#contenedor {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#cabecera {
+    border: 1px solid black;
+    width: 100%;
+}
+
+#menu {
+    border: 1px solid black;
+    width: 20%;
+}
+
+#contenido {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    border: 1px solid black;
+}
+
+#principal {
+    flex-grow: 2;
+    border: 1px solid black;
+}
+
+#secundario {
+    border: 1px solid black;
+}
+
+#pie {
+    width: 100%;
+    border: 1px solid black;
+}
