@@ -1,59 +1,73 @@
 <!DOCTYPE html>
 <html lang="es">
+	<head>
+		<title>Formulario del ejercicio</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+			html {
+				margin: 0 auto;
+				box-sizing: border-box;
+				display: flex;
+				justify-content: center;
+				background: black;
+			}
+			form {
+				width: 385px;
+			}
 
-<head>
-	<title>Formulario del ejercicio</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+			textarea {
+				max-width: 348px;
+				min-width: 348px;
+				max-height: 150px;
+				min-height: 150px;
+			}
 
-	<style>
-		html{
-			margin: 0 auto; 
-			box-sizing: border-box;
-			display: flex;
-			justify-content: center;
-		}
-		form{
-			width: 75%;
+			.nombre {
+				margin-bottom: 2px;
+			}
 
-		}
+			#formulario {
+				background: white;
 
-	</style>
-</head>
-
-<body>
-	<form id="formulario">
+			}
+		</style>
+	</head>
+	<body>
+		<form id="formulario">
 			<fieldset>
-			<legend><label for="textArea1">Indique</label></legend>
-		<textarea name="textArea1" id="textArea1" cols="30" rows="10"></textarea>
-		<br>
-		<Label for="Nombre">Nombre</Label>
-		<input type="text" id="Nombre">
-		<br>
-		<Label for="Apellidos">Apellidos</Label>
-		<input type="text" id="Apellidos">
-		<br>
-		<br>
-		<label>
-				<input type="radio" name="grupo1" value="lunes"> Lunes
-			</label>
-			<label>
+				<legend><label for="textArea1">Indique</label></legend>
+				<textarea placeholder="Utilice este cuadro para escribir" name="textArea1" id="textArea1" cols="30"
+					rows="10"></textarea>
 				<br>
-			<input type="radio" name="grupo2" value="martes"> Martes
-			</label>
-			<br>
-			<label>
-				<input type="radio" name="grupo1" value="miercoles"> Miercoles
-			</label>
-			<br>
-			<label>
-				<input type="radio" name="grupo2" value="jueves">Jueves
-			</label>
-			<br>
-			<label>
-			<input type="radio" name="grupo1" value="Sabado"> Sabado
-			</label>
-			<br><br>
+				<Label for="Nombre">Nombre</Label>
+				<input type="text" id="Nombre" class="nombre">
+				<br>
+				<Label for="Apellidos">Apellidos</Label>
+				<input type="text" id="Apellidos">
+				<br>
+				<br>
+				<label>
+					<input type="radio" name="grupo1" value="lunes"> Lunes
+				</label>
+				<label>
+				<br>
+					<input type="radio" name="grupo2" value="martes"> Martes
+				</label>
+				<br>
+				<label>
+					<input type="radio" name="grupo1" value="miercoles"> Miercoles
+				</label>
+				<br>
+				<label>
+					<input type="radio" name="grupo2" value="jueves"> Jueves
+				</label>
+				<br>
+				<label>
+					<input type="radio" name="grupo1" value="Sabado"> Sabado
+				</label>
+				<br><br>
+			</fieldset>
 			<fieldset>
 				<legend> <a href="./index.html"> Rellene las opciones siguientes </a></legend>
 				<input type="checkbox"> Ingles
@@ -71,15 +85,7 @@
 				</select>
 				<br><br>
 				<input type="radio">Intel <input type="radio">AMD
-
 			</fieldset>
-			</fieldset>
-
-
-	</form>
-
-
-
-</body>
-
+		</form>
+	</body>
 </html>
