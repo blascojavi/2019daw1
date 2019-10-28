@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    </head>
+    <body>
+        <form>
+            <fieldset>
+                <legend>Complete, por favor</legend>
+                <label for="nombre">Nombre
+                    <input type="text" id="nombre">
+                </label>
+                <label for="apellidos">Apellidos
+                    <input type="text" id="apellidos">
+                </label>
+                <br>
+                <input type="checkbox" name="rama" id="ciencias">Ciencias
+                <br>
+                <input type="checkbox" name="rama" id="letras">letras
+                <br>
+                <br>
+                <select name="materias" id="materias" size=4>
+                    <option value="historia">Historia</option>
+                    <option value="geografia">Geografia</option>
+                    <option value="Lengua">Lengua</option>
+                    <option value="matematicas">Matemáticas</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <legend>Indique</legend>
+                <select name="selectMateria" id="selectMateria">
+                    <option value="historia">Historia</option>
+                    <option value="geografia" selected>Geografia</option>
+                    <option value="Lengua">Lengua</option>
+                    <option value="matematicas">Matemáticas</option>
+                </select>
+                <br>
+                <textarea name="areaForm" id="areaForm" cols="37" rows="3" placeholder="Escriba aquí, por favor"></textarea>
+                <br>
+                <label for="nombreIndique">Nombre
+                    <input type="text" id="nombreIndique">
+                </label>
+                <label for="apellidosIndique">Apellidos
+                    <input type="text" id="apellidosIndique">
+                </label>
+                <label for="direccionIndique">Direccion
+                    <input type="text" id="direccionIndique">
+                </label>
+                <br>
+                <label for="Lengua"><input type="radio" name="materiaRadio" id="Lengua">Lengua</label>
+                <label for="Matematicas"><input type="radio" name="materiaRadio" id="Matematicas">Matemáticas</label>
+                <label for="Historia"><input type="radio" name="materiaRadio" id="Historia">Historia</label>
+                <label for="Geografia"><input type="radio" name="materiaRadio" id="Geografia">Geografía</label>
+            </fieldset>
+
+        </form>
+    
+    </body>
+</html>
