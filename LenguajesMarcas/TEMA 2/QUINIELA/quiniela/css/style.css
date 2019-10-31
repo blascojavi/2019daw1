@@ -5,7 +5,6 @@ html{
     justify-content: center;;
 }
 body{
-
     width: 90%;
 
 }
@@ -43,56 +42,40 @@ body{
     }
     .linea2Cabecera p {
         margin: 2px;
+        font-size: 1.8vh;
     }
 
     .infoJornada p{
         display:flex;
         align-items: flex-end;
+        flex-wrap: nowrap;
         border: 2px solid #006da8;
         padding: 5px 0.5vh 5px  0.9vh ;
         margin: 2px;
-        font-size: 3.1vh;
+        font-size: 2.8vh;
         color: #006da8;
     }
     .logosLiga{
         width: 9rem;
     }
-.pronosticos{
-    display: grid;
 
+table{
+    width: 70%;
+    border-collapse: collapse;
 }
-.mainContent{
-    display : flex;
-
-}
-
- .pronosticos{
-
-     width : 75%;
-     display: flex;
- }
-
-        .tablaPronosticos{
-            width: 100%;
-            border-collapse: collapse;
-
-        }
-        tbody{
-            border: 1px solid red;
-        }
+    thead{
+        width: 100%;
+    }
+ 
 
 
-            .tituloCasillero{
-                text-align: center;
-                letter-spacing: 28px; 
-                border: 1px solid red;
-            } 
-            .seccionTabla{
-                border-bottom: 1px solid red;
-            }
-            .seccionTabla td:nth-child(n+2){
-                border-bottom: 4px solid red;
-            }
-            .grupoRojo td:nth-child(n+1){
-                 border: 4px solid red;
-            }
+    .tituloPronosticos{
+        border: 1px solid red !important;
+        text-align: center;
+        color: red; 
+        font-size: 2vh;
+        letter-spacing: 1.4em;
+    }
+    .grupoRojo{
+       border: 5px solid blue;
+    }
