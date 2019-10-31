@@ -2,7 +2,8 @@ html{
     box-sizing: border-box;
     margin: 0 auto;
     display: flex;
-    justify-content: center;;
+    justify-content: center;
+    min-width: 1649px;
 }
 body{
     width: 90%;
@@ -42,7 +43,7 @@ body{
     }
     .linea2Cabecera p {
         margin: 2px;
-        font-size: 1.8vh;
+        font-size: 1.7vh;
     }
 
     .infoJornada p{
@@ -52,7 +53,7 @@ body{
         border: 2px solid #006da8;
         padding: 5px 0.5vh 5px  0.9vh ;
         margin: 2px;
-        font-size: 2.8vh;
+        font-size: 2.7vh;
         color: #006da8;
     }
     .logosLiga{
@@ -60,22 +61,33 @@ body{
     }
 
 table{
-    width: 70%;
+    width: 90%;
     border-collapse: collapse;
 }
     thead{
         width: 100%;
     }
  
-
+ tbody tr{
+     border: 1px solid red;
+     text-align: center;
+ }
 
     .tituloPronosticos{
-        border: 1px solid red !important;
+        border: 1px solid red;
         text-align: center;
         color: red; 
         font-size: 2vh;
-        letter-spacing: 1.4em;
+        letter-spacing: 2.3em;
     }
     .grupoRojo{
-       border: 5px solid blue;
+       border: 5px solid red;
     }
+    tbody tr td:nth-child(1){
+        border-left:1px solid white;
+        text-align: left;
+    }
+  
+  .equipos1 {
+      background: blue;
+  }
