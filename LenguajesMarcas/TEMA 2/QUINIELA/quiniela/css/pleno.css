@@ -1,0 +1,116 @@
+html{
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box;
+}
+body{
+    width:801px;
+
+    font-size: 12px;
+    text-align: center;
+}
+.plenoContainer{
+    width: 801px;
+    display: flex;
+  
+}
+
+    .Item{
+        width: 801px;
+        height: 30px;
+    
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-end ;
+    }
+    .arriba{
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        width: 50px;
+        margin-right: 10px;
+    }
+    .sup{
+        margin-bottom: 10px;
+    }
+    .abajo{
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        width: 65px;
+        margin-left: 76%;
+
+     
+    }
+    .caja{
+        padding: 1px;
+        margin :4px;
+        width: 10px; 
+        height: 16px;
+        border: 1px solid red; 
+    }
+
+        .azul{
+            border: 1px solid blue; 
+        }
+        .textRed{
+            display: flex;
+            justify-content: flex-end;
+            color: red;
+            margin-left: 1%;
+            margin-right: 12px;
+            font-size: 13px;;
+        }
+        .primerEquipo{
+            display: flex;
+            margin-left: -12px;
+            margin-right: -70px;
+            width: 200%;
+            font-size: 15px;
+        }
+        .primerEquipo:nth-child(1n+2){
+            background: darkmagenta;
+        }
+        .separacion{
+            background: darkcyan;
+        }
+        .casillas1{
+            display: flex;
+            justify-content: space-evenly;
+           margin-left: 2.5%;
+        }
+        .equipo2{
+         
+            width: 140%;
+        }
+
+.bloque{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 68px; 
+    height: 15px;
+    background: red;
+    color: white; 
+    margin: 8px;
+}
+.bloques{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 15px;
+    color: blue;
+    margin-left: 5%;
+}
+
+.bloque:nth-child(1){
+    margin-left: 10px;
+}
+.plenoContainer:nth-child(2){
+    margin-top:-2px;
+}
+.malContainer{
+    display: flex;
+    margin-top: -1%;
+
+}

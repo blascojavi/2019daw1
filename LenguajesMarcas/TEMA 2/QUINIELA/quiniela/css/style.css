@@ -123,26 +123,4 @@ body{
         letter-spacing: 3.2vh;
     }
     /* grid Pleno la 15 */
-    .combinaciones{
-        width: 90%;
-        display: grid;
-        grid-template-columns: 10% 2fr (8 1fr);
-        grid-template-rows: 1fr 1fr;
-        grid-template-areas: 
-        "bien pleno equip1 cero1 uno1 dos1 m1 equipo2 cero2 uno2 dos2 m2 "
-        "mal bloques b1 b2 b3 b4 b5 b6 b7 b8 ";
-    }
-    .comItem{
-        width: 50px;
-        height: 50px;
-    }
-    .bien{
-        grid-area: bien;
-    }
-    .bien{
-        grid-area: mal;
-    }
-    .pleno{
-        grid-area: pleno;
-    }
-    
+  
