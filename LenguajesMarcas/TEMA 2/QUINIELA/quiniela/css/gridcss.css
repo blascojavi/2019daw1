@@ -5,6 +5,8 @@ html{
     font-size: 1.75vh;
 }
 
+
+
 .gridContainer{
     width: 80%; /* TAMAÑO DE LA TABLA  */
     text-align: center;
@@ -62,3 +64,36 @@ html{
 
 }
 
+.headerContainer{
+    height: 150px;
+    width: 90%;
+    display: flex;
+
+   
+    grid-template-areas: 
+        "logoLae titulo logoQuiniela"
+        "logoLae instrucciones logoQuiniela"
+        "logoLae infoJornada logoQuiniela";
+    grid-template-columns: 1fr 6fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+    .logoLAE{
+        width: 25vh;
+
+        grid-area: logoLae;
+    }
+    .titulo{
+        grid-area: titulo;
+    }
+    .instrucciones{
+        grid-area: instrucciones;
+    }
+    .infoJornada{
+        grid-area: infoJornada;
+    }
+    .logoQuiniela{
+        width: 25vh;;
+
+        grid-area: logoQuiniela;
+    }
