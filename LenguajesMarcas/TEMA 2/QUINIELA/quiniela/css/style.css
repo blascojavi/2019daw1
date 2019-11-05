@@ -139,10 +139,10 @@ body{
         width: 8%;
         justify-content: flex-start;
         align-items: center;
-        color: blue;
+        color: #006da8;
     }
         .caja{
-            border: 1px solid blue;
+            border: 1px solid #006da8;
         }
     .C12{
         width: 4%;
@@ -154,7 +154,7 @@ body{
     }
     .Cequip1{
         width: 35%;
-        color: blue;
+        color: #006da8;
         justify-content: flex-start;
         align-items: center;
     }
@@ -168,7 +168,7 @@ body{
         }
         .Cequip2{
         width: 35%;
-        color: blue;
+        color: #006da8;
         justify-content: flex-start;
         align-items: center;
     }
@@ -196,13 +196,13 @@ body{
         margin-left: 5%;
         justify-content: flex-start;
         align-items: center;
-        color: blue;
+        color: #006da8;
     }
         .desplaza{
             margin-left: -5px;
         }
     .Cbloques{
-        color: blue;
+        color: #006da8;
     }
     .Ccasillero{
         justify-content: space-between;

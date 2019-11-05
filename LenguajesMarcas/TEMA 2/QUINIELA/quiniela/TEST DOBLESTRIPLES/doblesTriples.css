@@ -1,0 +1,151 @@
+html{
+    margin: 0px; 
+    padding: 0px; 
+    box-sizing: border-box;
+    font-size: 13px;
+}
+
+.grid{
+    width: 110px;
+    grid-template-rows: repeat( 17 ,25px);
+    padding: 5%;
+    display: grid;
+
+    grid-template-areas: 
+    "DobCombinaciones DobCombinaciones"
+    "c1f1 c2f1"
+    "c1f2 c2f2"
+    "c1f3 c2f3"
+    "c1f4 c2f4"
+    "c1f5 c2f5"
+    "c1f6 c2f6"
+    "c1f7 c2f7"
+    "c1f8 c2f8"
+    "c1f9 c2f9"
+    "c1f10 c2f10"
+    "c1f11 c2f11"
+    "c1f12 ."
+    "c1f13 ."
+    "c1f14 ."
+    "c1f15 ."
+    "c1f16 .";
+}
+.DobContainer{
+    border: 2px solid red;
+    padding: 5px;
+}
+    .DobItem{
+        border: 1px solid red;
+        text-align: center;
+        padding: 35%;
+        border: 0px;
+
+    }
+    .Dobborde{
+        color: red;
+        width: 14px;
+        height: 17px;
+        border: 1px solid red;        
+    }
+    .DobCombinaciones{
+        grid-area : DobCombinaciones;
+        text-align: center;
+        color: red;
+        padding-top: 3px;
+    }
+    div p{
+
+        font-size: 60%;
+        margin-top : 0px;
+        margin-left : -64%;
+
+    }
+        .c1f1{
+            grid-area: c1f1;
+            border-top: 1px solid red;
+        }
+        .c1f2{
+            grid-area: c1f2;
+        }
+        .c1f3{
+            grid-area: c1f3;
+        }
+        .c1f4{
+            grid-area: c1f4;
+        }
+        .c1f5{
+            grid-area: c1f5;
+        }
+        .c1f6{
+            grid-area: c1f6;
+        }
+        .c1f7{
+            grid-area: c1f7;
+        }
+        .c1f8{
+            grid-area: c1f8;
+        }
+        .c1f9{
+            grid-area: c1f9;
+        }
+        .c1f10{
+            grid-area: c1f10;
+           
+        }
+        .c1f11{
+            grid-area: c1f11;
+        }
+        .c1f12{
+            grid-area: c1f12;
+        }
+        .c1f13{
+            grid-area: c1f13;
+        }
+        .c1f14{
+            grid-area: c1f14;
+        }
+        .c1f15{
+            grid-area: c1f15;
+        }
+        .c1f16{
+            grid-area: c1f16;
+        }
+
+        .c2f1{
+            grid-area: c2f1;
+            border-top: 1px solid red;
+        }
+        .c2f2{
+            grid-area: c2f2;
+        }
+        .c2f3{
+            grid-area: c2f3;
+        }
+        .c2f4{
+            grid-area: c2f4;
+        }
+        .c2f5{
+            grid-area: c2f5;
+        }
+        .c2f6{
+            grid-area: c2f6;
+        }
+        .c2f7{
+            grid-area: c2f7;
+        }
+        .c2f8{
+            grid-area: c2f8;
+        }
+        .c2f9{
+            grid-area: c2f9;
+        }
+        .c2f10{
+            grid-area: c2f10;
+            
+
+        }
+        .c2f11{
+            grid-area: c2f11;
+             
+        }
+        
