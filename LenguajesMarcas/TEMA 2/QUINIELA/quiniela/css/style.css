@@ -4,7 +4,7 @@ html{
     justify-content: center;
     padding: 0 auto; 
     box-sizing: border-box;
-    font-size: 1.75vh;
+    font-size: 13px;
     min-width: 950px;
     max-width: 950px;
     font-family: 'Roboto', sans-serif;
@@ -122,5 +122,95 @@ body{
         color: red; 
         letter-spacing: 3.2vh;
     }
-    /* grid Pleno la 15 */
-  
+
+/*Estilos Pleno la 15 */
+  .flex{
+    display: flex;
+    margin: 0px;
+}
+/* FILA SUPERIOR */
+.container1{
+    width: 98%;
+    margin: 0px;
+    justify-content: flex-start;
+    align-items: center;
+}
+    .Cbien{
+        width: 8%;
+        justify-content: flex-start;
+        align-items: center;
+        color: blue;
+    }
+        .caja{
+            border: 1px solid blue;
+        }
+    .C12{
+        width: 4%;
+    }
+    .Cpleno{
+        width: 13%;
+        color: red;
+        justify-content: flex-start;
+    }
+    .Cequip1{
+        width: 35%;
+        color: blue;
+        justify-content: flex-start;
+        align-items: center;
+    }
+        .cajaCasillas{
+            width: 15px;
+            height: 20px;
+            border: 1px solid red;
+            color: red;
+            text-align: center;
+            margin-left: 5px;
+        }
+        .Cequip2{
+        width: 35%;
+        color: blue;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .C15{
+        width: 4%;
+    }
+
+/* FILA INFERIOR */
+.combinaciones{
+    margin-left: 1%;
+}
+.Ccontainer2{
+    width: 96%;
+    margin-top: -2%;
+    padding: 0px;
+    justify-content:flex-start;
+    align-items: center;
+}
+    .C20{
+        width: 5%;
+    }
+    .Cmal{
+        width: 6%;
+        margin-top : -2%;
+        margin-left: 5%;
+        justify-content: flex-start;
+        align-items: center;
+        color: blue;
+    }
+        .desplaza{
+            margin-left: -5px;
+        }
+    .Cbloques{
+        color: blue;
+    }
+    .Ccasillero{
+        justify-content: space-between;
+        width: 74%;
+    }
+        .Ccasilla{
+            text-align: center;
+            width: 60px;
+            color: white; 
+            background: red;
+        }

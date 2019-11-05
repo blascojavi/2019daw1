@@ -10,7 +10,7 @@ body{
     text-align: center;
 }
 .plenoContainer{
-    width: 801px;
+    width: 119%;
     display: flex;
   
 }
@@ -63,26 +63,37 @@ body{
         }
         .primerEquipo{
             display: flex;
-            margin-left: -12px;
-            margin-right: -70px;
-            width: 200%;
+            width: 100%;
             font-size: 15px;
         }
-        .primerEquipo:nth-child(1n+2){
-            background: darkmagenta;
+        .segmento2{
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .segundoEquipo{
+            display: flex;
+            font-size: 15px;
         }
         .separacion{
             background: darkcyan;
         }
-        .casillas1{
+/*         .casillas1{
             display: flex;
             justify-content: space-evenly;
-           margin-left: 2.5%;
+           margin-right: 2.5%;
+        
+        } */
+        .segundoEquipo{
+           width:130%; 
         }
-        .equipo2{
-         
-            width: 140%;
+          .casillas2{
+            display: flex;
+            width: 55%;
+            justify-content: flex-end;
+            margin-right: 10%;
         }
+
 
 .bloque{
     display: flex;
