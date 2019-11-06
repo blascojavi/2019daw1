@@ -7,7 +7,7 @@ html{
 
 .grid{
     width: 110px;
-    grid-template-rows: repeat( 17 ,25px);
+    grid-template-rows: repeat( 16 ,25px);
     padding: 5%;
     display: grid;
 
@@ -31,13 +31,15 @@ html{
     "c1f16 .";
 }
 .DobContainer{
-    border: 2px solid red;
-    padding: 5px;
+   border-left: 2px solid red;
+
 }
     .DobItem{
+        display: flex;
+        justify-content: center;
+        align-items: center;
         border: 1px solid red;
         text-align: center;
-        padding: 35%;
         border: 0px;
 
     }
@@ -51,7 +53,10 @@ html{
         grid-area : DobCombinaciones;
         text-align: center;
         color: red;
-        padding-top: 3px;
+        border-right: 2px solid red;
+        border-top:2px solid red;
+        padding: 1px;
+
     }
     div p{
 
@@ -63,6 +68,7 @@ html{
         .c1f1{
             grid-area: c1f1;
             border-top: 1px solid red;
+           
         }
         .c1f2{
             grid-area: c1f2;
@@ -94,58 +100,75 @@ html{
         }
         .c1f11{
             grid-area: c1f11;
+            border-right: 2px solid red;
         }
         .c1f12{
             grid-area: c1f12;
+            border-right: 2px solid red;
         }
         .c1f13{
             grid-area: c1f13;
+           border-right: 2px solid red;
         }
         .c1f14{
             grid-area: c1f14;
+           border-right: 2px solid red;
         }
         .c1f15{
             grid-area: c1f15;
+            border-right: 2px solid red;
         }
         .c1f16{
             grid-area: c1f16;
+            border-right: 2px solid red;
+            border-bottom: 2px solid red;;
         }
 
         .c2f1{
             grid-area: c2f1;
             border-top: 1px solid red;
+            border-right: 2px solid red;
         }
         .c2f2{
             grid-area: c2f2;
+            border-right: 2px solid red;
         }
         .c2f3{
             grid-area: c2f3;
+            border-right: 2px solid red;
         }
         .c2f4{
             grid-area: c2f4;
+            border-right: 2px solid red;
         }
         .c2f5{
             grid-area: c2f5;
+            border-right: 2px solid red;
         }
         .c2f6{
             grid-area: c2f6;
+            border-right: 2px solid red;
         }
         .c2f7{
             grid-area: c2f7;
+            border-right: 2px solid red;
         }
         .c2f8{
             grid-area: c2f8;
+            border-right: 2px solid red;
         }
         .c2f9{
             grid-area: c2f9;
+            border-right: 2px solid red;
         }
         .c2f10{
             grid-area: c2f10;
-            
-
+            border-right: 2px solid red;
+            border-bottom: 2px solid red; 
         }
         .c2f11{
             grid-area: c2f11;
+            
              
         }
         
