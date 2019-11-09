@@ -27,7 +27,8 @@ public class Ej6Coleciones {
         boolean salir = false;
         final String validador = "^[a-e]$";
         Deque<String> pedidos = new ArrayDeque<>();
-        
+                
+        do{
         System.out.println("MENÚ PRINCIPAL . Por favor seleccione una opción. ");
         System.out.println("");
         System.out.println("a . Dar de alta pedido.");
@@ -38,8 +39,7 @@ public class Ej6Coleciones {
         System.out.print(" Seleccione (a - e ) : ");
         seleccion = scan.next(); 
         seleccion = seleccion.toLowerCase();
-        
-        do{
+
         switch(seleccion){
                 case "a" :
                     System.out.println(" Indique el nombre del nuevo pedido : ");
@@ -59,21 +59,37 @@ public class Ej6Coleciones {
                     }       
                 break; 
 
-                case "c" : 
-                    System.out.println("");
-                    System.out.println("Tu primer pedido es :  " + pedidos.getFirst());
+                case "c" :
+                    try{
+                        System.out.println("");
+                        System.out.println("Tu primer pedido es :  " + pedidos.getFirst());
+                    }catch(Exception e){
+                        System.out.println("FALLO AL RECUPERAR DATOS .");
+                    }
+
                 break; 
 
-                case d : 
+                case "d" : 
                     System.out.println("");
-                    System.out.println("SIRVIENDO PEDIDO...");
+                    System.out.println("");
+                    System.out.println("LISTADO DE PEDIDOS");
                     
-                    System.out.println("ELIMINANDO PEDIDO DE LA LISTA DE PENDIENTES");
-                    
-                   
+                    for(String pedido : pedidos){
+                        System.out.println(pedido);
+                    }   
+                    System.out.println("Que pedido quiere servir : ");
+                    seleccion = scan.next();
+                    if(pedidos.contains(seleccion)){
+                        pedidos.remove(seleccion);
+                        System.out.println("SIRVIENDO PEDIDO...");
+                        
+                        System.out.println("ELIMINANDO PEDIDO DE LA LISTA DE PENDIENTES");
+                    }else{
+                        System.out.println("NO SE HA ENCONTRADO RESTE PEDIDO ... SALIENDO ");
+                    }
                 break; 
 
-                case e : 
+                case "e" : 
                     System.out.println("");
                     System.out.println("GRACIAS POR USAR EL PROGRAMA");
                     salir = true; 
@@ -83,7 +99,7 @@ public class Ej6Coleciones {
 
                 break; 
             }
-        }while (salir);
+        }while(salir == false);
     }
     
 }
