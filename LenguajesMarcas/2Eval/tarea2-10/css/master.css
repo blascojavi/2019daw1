@@ -1,0 +1,399 @@
+/*------------------------------
+Características básicas
+------------------------------*/
+
+/* Inicializando */
+* {
+	/*margen interior y exterior de 0px*/
+	margin : 0px; 
+	padding : 0 px;
+}
+
+header, footer, section, aside, nav, article {
+	/* Definimos los elementos de estructura para que se visualizen como elementos de bloque */
+	display: block;
+}
+
+body {
+	/* margen superior/inferior de 0px y derecho/izquierdo automático */
+	margin: 0px auto opx auto;
+	/*margen interior superior/inferior de 22px y derecho/izquierdo 0px */
+	padding: 22px 0px 22px 0px; 
+	/*ancho 940px*/
+	width: 940px;
+	/*Color de fondo hexadecimal F0F0F0*/
+	background: F0F0F0;
+	/*Tipos de letra Helvética, Arial, sans-serif de 13px/22px */
+	font-family: Helvetica,Arial,sans-serif;
+	font-size: 13px;
+	
+}
+
+h1, h2 {
+	/*Tamaño de letra 28px
+	margen interior superior/inferior de 22px y derecho/izquierdo 0px *
+	interlineado de 44px*/
+	font-size: 28px;
+	margin: 22px 0px 22px 0px;
+	line-height: 44px;
+	
+}
+
+h3 {
+	/*Tamaño de letra 18px
+	margen interior superior/inferior de 11px y derecho/izquierdo 0px 
+	interlineado de 22px*/
+	font-size: 18px;
+	margin: 11px 0px 11px 0px;
+	line-height: 22px;
+}
+
+p {
+	/*
+	margen interior inferior de 22px 
+	*/
+	padding-bottom: 22px;
+}
+
+
+
+/*------------------------------
+Elenmento nav
+------------------------------*/
+
+nav {
+	/*Posicion absoluta a una distancia de 0 a la izquierda
+	ancho del 100%
+	imagen de fondo nav_background.png*/
+	position: absolute;
+	margin-right: 0px;
+	width: 100%;
+	background-image: url(../img/nav_background.png); 
+	
+}
+
+	nav ul {
+	/*margen superior/inferior de 0px y derecho/izquierdo automático
+	ancho 940px
+	Sin viñeta en los elementos de lista*/
+		margin: 0px auto 0px auto;
+		list-style: none;
+	}
+
+		nav ul li {
+			
+			/*elementos flotantes hacia la izquierda*/
+			float: left;
+		}
+		
+			nav ul li a {
+				/*Deben visualizarse como elementos de bloque
+				margen  derecho de 20px
+				ancho 140px
+				tamaño de letra 14px
+				interlineado de 44px
+				Alineacion de párrafo centrado
+				Sín línea  inferior que indique que es un hiperenlace
+				color del texto hexadecimal 777777*/
+				display: block;
+				margin-left: 20px;
+				width: 140px;
+				font-size: 14px;
+				line-height: 44px;
+				text-align: center;
+				text-decoration: none;
+				color: #777777;
+				}
+			
+				nav ul li a:hover {
+					/*
+					color del texto 70,215,18 rgb con una transparencia de 0.8*/
+					 color: rgb(70, 215, 18);
+					 opacity: 0.8;
+
+				}
+			
+			nav ul li.selected a {
+				/*
+				color del texto hexadecimal ffffff*/
+				color: #ffffff;
+				
+			}
+			
+			nav ul li.subscripcion a {
+				/*
+				margen  izquierdo de 22px
+				margen  interior izquierdo de 33px
+				Alineacion de párrafo izquierda
+				imagen de fondo rss.png sin repeticion situacda a la izquierda y el centro*/
+				margin-left: 22px; 
+				margin-bottom: 33px;
+				margin-right: 33px; 
+				text-align: left;
+				background-image: url(../img/rss.png);
+				background-repeat: no-repeat;
+				background-position: left center ;
+			}
+
+
+
+/*------------------------------
+Introduccion
+------------------------------*/
+
+#intro {
+				/*
+				posición relativa
+				margen  superior de 66px
+				margen  interior de 44px
+				color de fondo hexadecimal 467612
+				imagen de fondo intro_background.png con repeticion en el eje x
+				El borde debe tener un radio de 22px */
+		
+	-webkit-background-size: 100%;
+	-o-background-size: 100%;
+	-khtml-background-size: 100%;
+	background-size: 100%;
+	}
+
+	#intro h2, #intro p {
+		/*
+				posición relativa
+				ancho de 336px */
+		z-index: 9999;
+		
+	}
+	
+	#intro h2 {
+		/*
+			margen  interior de 22px en la parte inferior y de 0 en el resto
+			color de texto hexadecimal ffffff
+			ancho de letra normal */
+		
+			}
+	
+	#intro p {
+		/*
+		margen  interior de 0px
+		color de texto hexadecimal d9f499
+		*/
+		
+		}
+	
+	#intro img {
+		/*
+		posición absoluta a opx del borde superior y a o px del borde derecho
+		ancho 653px
+		alto del 100%
+		El borde debe tener un radio de 22px*/
+	}
+
+
+
+/*------------------------------
+área principal y barra lateral
+------------------------------*/
+
+#content {
+	display: table;
+}
+
+	#mainContent {
+		/*
+		ancho 620px
+		margen interior derecho de 22px*/
+		display: table-cell;
+		
+	}
+	
+	aside {
+		/*
+		ancho 620px
+		imagen de fondo sidebar_background.png situasda en la parte superior izquierda */
+		display: table-cell;
+		
+	}
+
+
+
+/*------------------------------
+Artículos del blog
+------------------------------*/
+.blogPost header p, .blogPost header p a {
+	/*
+	tamaño del texto 14px
+	cursiva
+	color del texto hexadecimal 777777 */
+		
+	}
+	
+		.blogPost header p a:hover {
+			/*
+			Sín línea  inferior que indique que es un hiperenlace
+			color del texto hexadecimal 000000*/
+			}
+
+.blogPost div {
+	-moz-column-count: 2;
+	-webkit-column-count: 2;
+	column-count: 2;
+	
+	-moz-column-gap: 22px;
+	-webkit-column-gap: 22px;
+	column-gap: 22px;
+}
+	
+.blogPost img {
+	
+	/* margen superior/inferior de 22px y derecho/izquierdo 0
+	sombra de color hexadecimal 777777 de desplazamioento 3px horizontal 3px vertical y difuminado de 7px 
+	*/
+	
+}
+
+
+
+/*------------------------------
+Comentarios
+------------------------------*/
+
+#comments {
+	/* margen superior de 21px  
+	margen interior superior de 22px  
+	borde superior de 1px solido color hexadecimal d7d7d7
+	*/
+	
+}
+
+	#comments article {
+	/* 
+	margen interior de 22px  
+	 
+	*/
+		display: table;
+		
+	}
+	
+	#comments article:nth-child(odd) {
+	/* margen interior de 21px 
+	Color de fondo hexadecimal e3e3e3
+	borde de 1px solido color hexadecimal d7d7d7 
+	El borde debe tener un radio de 11px
+	*/
+	}
+	
+		#comments article header {
+	/* ancho de 220px  
+	margen interior derecho de 22px  
+	*/
+		display: table-cell;
+		}
+		
+			#comments article header a {
+				/*
+		Se visualizará como elemento de bloque
+		Negriuta
+		color hexadecimal 000000
+		*/
+		
+			}
+			
+				#comments article header a:hover {
+					/*Sín línea  inferior que indique que es un hiperenlace*/
+					
+				}
+		
+		#comments article p {
+			/* margen interior de 0*/
+		
+		}
+
+
+/*------------------------------
+Barra lateral
+------------------------------*/
+aside section {
+	/* margen superior de 22px, derecho 0, inferior de 0 e izquierdo de 22px
+	margen interior superior/inferior de 11px y derecho/izquierdo 22px
+	imagen de fondo que se repite en el eje x sidebar_section_background.png
+	el borde tiene radio de 11px 
+	*/
+	
+}
+
+	aside section ul {
+		/* margen izquierdo de 22px, el resto 0
+		los elementos de lista no debeb tener viñeta 
+	*/
+	}
+	
+		aside section ul li a {
+			/*Se visualizara como elemento de bloque
+			Sín línea  inferior que indique que es un hiperenlace
+			color del texto hexadecimal 000000*/
+			
+		}
+		
+			aside section ul li a:hover {
+				/*Con línea  inferior que indique que es un hiperenlace*/
+				text-decoration: underline;
+			}
+
+
+
+/*------------------------------
+Pie
+------------------------------*/
+footer {
+	/*posicion absoluta a 0px del margen izquierdo
+	ancho 100%
+	color de fondo hexadecimal 222222*/
+	
+}
+
+	footer div {
+		/*Deben visualizarse como elementos de bloque
+		margen superior/inferior de 0px y derecho/izquierdo automático
+		margen interior superior/inferior de 44px y derecho/izquierdo de 0
+		ancho 940px
+		color del texto hexadecimal 777777*/
+		display: table;
+		
+	}
+	
+		footer div section {
+			display: table-cell;
+			/*ancho de 300px*/
+			
+		}
+		
+		footer div #about, footer div #blogroll {
+			/*margen derecho de 20px*/
+			
+		}
+		
+	footer h3 {
+		/* color de texto ffffff */
+		
+	}
+	
+	footer a {
+		/* color de texto 999999 */ 
+	}
+	
+		footer a:hover {
+			/* color de texto 170,215,18 en notacion rgb con una transparencia de 0,8
+			Sin línea inferior que indique que es un hiperenlace*/
+		}	
+	footer ul {
+	/* margen izquierdo de 40px el resto debe ser 0
+	la viñeta de los elementos de lista debe ser un cuadrado
+	color del texto 565656 
+	*/
+	
+	}
+	
+		footer ul li a {
+			/*se debe visualizar como elemento de bloque*/
+			
+		}

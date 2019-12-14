@@ -23,7 +23,7 @@ import java.lang.Double;
  * @author buceo
  */
 public class TestCirculo {
-    Circulo circulo = new Circulo();
+   Circulo circulo = new Circulo();
     
     public TestCirculo() {
     }
@@ -54,9 +54,9 @@ public class TestCirculo {
     public void areaCirculoRadio10(){
         // Se espera que el area de un circulo de radio 10 sea de 314.16 
         
-        
+        double radio = 10 ;
         double esperado = 314.16; 
-        double resultado = circulo.areaDeR10();
+        double resultado = circulo.area(radio);
 
         assertEquals(esperado, resultado, 0.01);
    }
@@ -64,6 +64,31 @@ public class TestCirculo {
     
     @Test
     public void calculaDiametroEnFuncionDelRadio(){
-
+        // dado un radio obtener el diametro 
+        double radio = 35; 
+        double esperado = 70 ; 
+        double resultado = circulo.diametro(radio); 
+        
+        assertEquals(esperado , resultado , 0.01);
+    }
+    
+    @Test
+    public void CalculaPerimetroEnFuncionDelRadio(){
+        // Perímetro = 2 * radio * PI
+        double esperado = 219.91;
+        double radio = 35; 
+        double resultado = circulo.perimetro(radio); 
+        
+        assertEquals(esperado, resultado , 0.01);
+    }
+    
+    @Test
+    public void calculaSectorDeDiametroCirculo(){
+        //Area Sector = (Angulo/360) * radio2 * PI
+        double angulo = 25.9; 
+        double radio = 35; 
+        double esperado = (25.9/360) * Math.pow(radio, 2) * Math.PI;
+        
+        assertEquals(esperado, circulo.areaSector(radio , angulo) , 0.01);
     }
 }

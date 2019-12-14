@@ -1,0 +1,23 @@
+.sinestilo{
+    text-decoration: none;
+    font-family: arial,Helvetica,sans-serif;
+}
+
+.mayusculas{
+    text-transform: uppercase;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.2em;
+}
+
+.minusculas{
+    text-transform: lowercase;
+    font-family:'Courier New', Courier, monospace ;
+    line-height: 130%;
+}
+
+.capital{
+    text-transform: capitalize;
+    font-family: cursive, "Palatino Linotype", "Book Antiqua", "Palatino" , serif;
+}
+
+

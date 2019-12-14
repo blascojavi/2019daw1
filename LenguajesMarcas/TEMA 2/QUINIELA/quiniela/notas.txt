@@ -1,7 +1,0 @@
-Optimizado y comprobado en 
- Firefox v71 y  Crome v78
-
-NO funciona correctamente es explorer o edge
-
-La web NO está diseñada de forma responsive.
-Por cuestiones de orden , he organizado las imagenes en una carpeta

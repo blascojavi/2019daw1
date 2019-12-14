@@ -11,17 +11,32 @@ package elcirculo;
  */
 public class Circulo {
     
-    private double area ; 
-    private double radio ;
-    
-    
-    
-    public double areaDeR10(){
-        radio = 10 ; 
+
+
+  
+    public double area(double radio){
         
-        area = Math.PI * (Math.pow(radio, 2));
-        System.out.println(area);
+        double area = Math.PI * (Math.pow(radio, 2));
+        
         return area; 
+    
+    }
+    public double diametro(double radio){
+        double diametro = 2 * radio ; 
+        
+        return diametro; 
+    }
+    
+    public double perimetro(double radio){
+        double perimetro = 2 * Math.PI * radio; 
+        
+        return perimetro; 
+    }
+    
+    public double areaSector(double radio , double angulo){
+        double areaSector = (angulo/360) * Math.pow(radio , 2) * Math.PI;   
+        
+        return areaSector;
     }
     
     
