@@ -16,13 +16,13 @@ header, footer, section, aside, nav, article {
 
 body {
 	/* margen superior/inferior de 0px y derecho/izquierdo automático */
-	margin: 0px auto opx auto;
+	margin: 0px auto ;
 	/*margen interior superior/inferior de 22px y derecho/izquierdo 0px */
-	padding: 22px 0px 22px 0px; 
+	padding: 22px 0px; 
 	/*ancho 940px*/
 	width: 940px;
 	/*Color de fondo hexadecimal F0F0F0*/
-	background: F0F0F0;
+	background: #F0F0F0;
 	/*Tipos de letra Helvética, Arial, sans-serif de 13px/22px */
 	font-family: Helvetica,Arial,sans-serif;
 	font-size: 13px;
@@ -34,7 +34,7 @@ h1, h2 {
 	margen interior superior/inferior de 22px y derecho/izquierdo 0px *
 	interlineado de 44px*/
 	font-size: 28px;
-	margin: 22px 0px 22px 0px;
+	padding: 22px 0px;
 	line-height: 44px;
 	
 }
@@ -66,17 +66,18 @@ nav {
 	ancho del 100%
 	imagen de fondo nav_background.png*/
 	position: absolute;
-	margin-right: 0px;
+	left: 0px;
 	width: 100%;
 	background-image: url(../img/nav_background.png); 
-	
+
 }
 
 	nav ul {
 	/*margen superior/inferior de 0px y derecho/izquierdo automático
 	ancho 940px
 	Sin viñeta en los elementos de lista*/
-		margin: 0px auto 0px auto;
+		margin: 0px auto;
+		width: 940px;
 		list-style: none;
 	}
 
@@ -127,14 +128,12 @@ nav {
 				Alineacion de párrafo izquierda
 				imagen de fondo rss.png sin repeticion situacda a la izquierda y el centro*/
 				margin-left: 22px; 
-				margin-bottom: 33px;
-				margin-right: 33px; 
+				padding-left: 33px;
 				text-align: left;
 				background-image: url(../img/rss.png);
 				background-repeat: no-repeat;
 				background-position: left center ;
 			}
-
 
 
 /*------------------------------
@@ -149,7 +148,15 @@ Introduccion
 				color de fondo hexadecimal 467612
 				imagen de fondo intro_background.png con repeticion en el eje x
 				El borde debe tener un radio de 22px */
-		
+				position: relative;
+				margin-top: 66px;
+				padding: 44px;
+				background: #467612; 
+				background-image: url(../img/intro_background.png);
+				background-repeat: repeat-x;
+				border-radius: 22px;
+
+
 	-webkit-background-size: 100%;
 	-o-background-size: 100%;
 	-khtml-background-size: 100%;
@@ -160,7 +167,10 @@ Introduccion
 		/*
 				posición relativa
 				ancho de 336px */
+				position: relative; 
+				width: 336px;
 		z-index: 9999;
+
 		
 	}
 	
@@ -172,6 +182,7 @@ Introduccion
 			padding: 0px 0px 22px 0px;
 			color : #ffffff;
 			font-weight: normal;
+
 			}
 	
 	#intro p {
@@ -180,6 +191,7 @@ Introduccion
 		color de texto hexadecimal d9f499
 		*/
 		padding: 0px;
+		
 		color : #d9f499;
 		}
 	
@@ -190,11 +202,10 @@ Introduccion
 		alto del 100%
 		El borde debe tener un radio de 22px*/
 		position: absolute;
-		top : 0px; 
-		right: 0px;
-		width: 653px;
+ 		top : 0;  
+		right: 0;
+		width: 653px; 
 		height: 100%;
-		border: 1px solid black; 
 		border-radius: 22px;
 	}
 
@@ -225,7 +236,7 @@ Introduccion
 		display: table-cell;
 		width: 620px;
 		background-image: url(../img/sidebar_background.png);
-		background-position: 0% 0%;
+		background-position: 100% 0%;
 	}
 
 
@@ -266,7 +277,7 @@ Artículos del blog
 	/* margen superior/inferior de 22px y derecho/izquierdo 0
 	sombra de color hexadecimal 777777 de desplazamioento 3px horizontal 3px vertical y difuminado de 7px 
 	*/
-	margin-top: 22px 0px;
+	margin: 22px 0px;
 	box-shadow: 3px 3px 7px #777777;
 	
 }
@@ -284,7 +295,7 @@ Comentarios
 	*/
 	margin-top: 21px;
 	padding-top: 22px;
-	border: 1px solid #d7d7d7;
+	border-top: 1px solid #d7d7d7;
 }
 
 	#comments article {
@@ -352,13 +363,14 @@ aside section {
 	padding: 11px 22px;
 	background-image:  url(../img/sidebar_section_background.png); 
 	background-repeat: repeat-x;
+	border-radius: 11px;
 }
 
 	aside section ul {
 		/* margen izquierdo de 22px, el resto 0
 		los elementos de lista no debeb tener viñeta 
 	*/
-	margin: 22px 0px 0px 0px;
+	margin: 0px 0px 0px 22px;
 	list-style: none;
 	}
 	
@@ -387,7 +399,7 @@ footer {
 	ancho 100%
 	color de fondo hexadecimal 222222*/
 	position: absolute;
-	margin-left: 0px;
+	left: 0px;
 	width: 100%;
 	background: #222222;
 }
@@ -398,7 +410,7 @@ footer {
 		margen interior superior/inferior de 44px y derecho/izquierdo de 0
 		ancho 940px
 		color del texto hexadecimal 777777*/
-		display: table;
+		/* display: table; */
 		display: block; 
 		margin: 0px auto;
 		padding: 44px 0px;
@@ -440,7 +452,7 @@ footer {
 	la viñeta de los elementos de lista debe ser un cuadrado
 	color del texto 565656 
 	*/
-	margin: 40px 0px 0px 0px;
+	margin: 0px 0px 0px 40px;
 	list-style: square;
 	color: #565656;
 	
