@@ -11,7 +11,7 @@ public class Principal {
         Persona titular = new Persona("33444666S", "Raquel Lopez");
         Persona autorizado = new Persona("24378964K" , "Antonio Ferrer"); 
         CuentaBancaria cuenta = new CuentaBancaria(123456789, titular);
-        cuenta.autorizar(autorizado);
+
         do {
             respuesta = menu();
             switch (respuesta) {
@@ -27,7 +27,13 @@ public class Principal {
                     break;
                 case "3": 
                     verInformacion(cuenta);
-                     break;    
+                     break;  
+                case "4": 
+                    autorizar(cuenta);
+                     break;
+                case "5": 
+                    desautorizar(cuenta);
+                     break;
                 default:
                     System.out.println("Debe seleccionar un numero correcto");
             }
@@ -42,6 +48,8 @@ public class Principal {
         System.out.println("1-Ingresar dinero.");
         System.out.println("2-Sacar dinero.");
         System.out.println("3-Informacion de la cuenta.");
+        System.out.println("4-Autorizar.");
+        System.out.println("5-Desautorizar.");
         System.out.println("0-Salir\n");
         respuesta = sc.nextLine();
         return respuesta;
@@ -83,8 +91,20 @@ public class Principal {
     
     public static void verInformacion(CuentaBancaria cuenta){
         System.out.println( cuenta.informacionCuenta());
+
     }
     
+    public static void autorizar(CuentaBancaria cuenta){
+        System.out.println("Indiqueme el DNI de la persona a autorizar: ");
+        String dni = sc.next();
+        System.out.println("Indique nombre y apellidos de la persona a autorizar: ");
+        String nombre = sc.next();
+        cuenta.autorizar(dni,nombre);
+    }
+
+    public static void desautorizar(CuentaBancaria cuenta){
+        
+    }
     
     
 }

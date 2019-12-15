@@ -36,8 +36,19 @@ public class CuentaBancaria {
     }
    
        
-    public boolean autorizar (Persona autorizado){
-        return autorizados.add(autorizado); 
+    public boolean autorizar(Persona autorizado){
+        if (this.existe(autorizado.getNif()) != null ){
+            return false; 
+        }
+        autorizados.add(autorizado); 
+        return true; 
+    }
+    
+    public boolean desautorizar(String dni){
+        if(this.existe(dni) !=null ){
+           return autorizados.remove(this.existe(dni));
+        }
+        return false; 
     }
     
     public double ingresar(double cantidad){
@@ -70,4 +81,15 @@ public class CuentaBancaria {
         return datosTitular.concat("\nSu saldo actual es de : " + this.saldo + "€ \n");
         
     }
+    
+    public Persona existe(String dni) {
+        for(Persona autorizado : this.autorizados ){
+            if (autorizado.igual(dni) ){
+                return autorizado;
+            }
+        }
+           return null;   
+    }
+        
+      
 }
