@@ -169,7 +169,9 @@ Introduccion
 			margen  interior de 22px en la parte inferior y de 0 en el resto
 			color de texto hexadecimal ffffff
 			ancho de letra normal */
-		
+			padding: 0px 0px 22px 0px;
+			color : #ffffff;
+			font-weight: normal;
 			}
 	
 	#intro p {
@@ -177,7 +179,8 @@ Introduccion
 		margen  interior de 0px
 		color de texto hexadecimal d9f499
 		*/
-		
+		padding: 0px;
+		color : #d9f499;
 		}
 	
 	#intro img {
@@ -186,6 +189,13 @@ Introduccion
 		ancho 653px
 		alto del 100%
 		El borde debe tener un radio de 22px*/
+		position: absolute;
+		top : 0px; 
+		right: 0px;
+		width: 653px;
+		height: 100%;
+		border: 1px solid black; 
+		border-radius: 22px;
 	}
 
 
@@ -203,6 +213,8 @@ Introduccion
 		ancho 620px
 		margen interior derecho de 22px*/
 		display: table-cell;
+		width: 620px;
+		padding-right: 22px;
 		
 	}
 	
@@ -211,7 +223,9 @@ Introduccion
 		ancho 620px
 		imagen de fondo sidebar_background.png situasda en la parte superior izquierda */
 		display: table-cell;
-		
+		width: 620px;
+		background-image: url(../img/sidebar_background.png);
+		background-position: 0% 0%;
 	}
 
 
@@ -224,13 +238,17 @@ Artículos del blog
 	tamaño del texto 14px
 	cursiva
 	color del texto hexadecimal 777777 */
-		
+	font-size: 14px;
+	font-style: italic;
+	color: #777777;	
 	}
 	
 		.blogPost header p a:hover {
 			/*
 			Sín línea  inferior que indique que es un hiperenlace
 			color del texto hexadecimal 000000*/
+			text-decoration: none;
+			color: #000000;
 			}
 
 .blogPost div {
@@ -248,6 +266,8 @@ Artículos del blog
 	/* margen superior/inferior de 22px y derecho/izquierdo 0
 	sombra de color hexadecimal 777777 de desplazamioento 3px horizontal 3px vertical y difuminado de 7px 
 	*/
+	margin-top: 22px 0px;
+	box-shadow: 3px 3px 7px #777777;
 	
 }
 
@@ -262,16 +282,17 @@ Comentarios
 	margen interior superior de 22px  
 	borde superior de 1px solido color hexadecimal d7d7d7
 	*/
-	
+	margin-top: 21px;
+	padding-top: 22px;
+	border: 1px solid #d7d7d7;
 }
 
 	#comments article {
 	/* 
 	margen interior de 22px  
-	 
 	*/
 		display: table;
-		
+		padding: 22px;
 	}
 	
 	#comments article:nth-child(odd) {
@@ -279,7 +300,12 @@ Comentarios
 	Color de fondo hexadecimal e3e3e3
 	borde de 1px solido color hexadecimal d7d7d7 
 	El borde debe tener un radio de 11px
+	
 	*/
+	padding : 21px; 
+	background: #e3e3e3;
+	border: 1px solid #d7d7d7;
+	border-radius: 11px;
 	}
 	
 		#comments article header {
@@ -287,6 +313,8 @@ Comentarios
 	margen interior derecho de 22px  
 	*/
 		display: table-cell;
+		width: 220px;
+		padding-right: 22px;
 		}
 		
 			#comments article header a {
@@ -295,17 +323,19 @@ Comentarios
 		Negriuta
 		color hexadecimal 000000
 		*/
-		
+		display: block;
+		font-weight: bold;
+		color: #000000;
 			}
 			
 				#comments article header a:hover {
 					/*Sín línea  inferior que indique que es un hiperenlace*/
-					
+					text-decoration: none;
 				}
 		
 		#comments article p {
 			/* margen interior de 0*/
-		
+			padding: 0px;
 		}
 
 
@@ -318,25 +348,33 @@ aside section {
 	imagen de fondo que se repite en el eje x sidebar_section_background.png
 	el borde tiene radio de 11px 
 	*/
-	
+	margin: 22px 0px 0px 22px;
+	padding: 11px 22px;
+	background-image:  url(../img/sidebar_section_background.png); 
+	background-repeat: repeat-x;
 }
 
 	aside section ul {
 		/* margen izquierdo de 22px, el resto 0
 		los elementos de lista no debeb tener viñeta 
 	*/
+	margin: 22px 0px 0px 0px;
+	list-style: none;
 	}
 	
 		aside section ul li a {
 			/*Se visualizara como elemento de bloque
 			Sín línea  inferior que indique que es un hiperenlace
 			color del texto hexadecimal 000000*/
-			
+			display: block;
+			text-decoration: none;
+			color: #000000;
 		}
 		
 			aside section ul li a:hover {
 				/*Con línea  inferior que indique que es un hiperenlace*/
 				text-decoration: underline;
+
 			}
 
 
@@ -348,7 +386,10 @@ footer {
 	/*posicion absoluta a 0px del margen izquierdo
 	ancho 100%
 	color de fondo hexadecimal 222222*/
-	
+	position: absolute;
+	margin-left: 0px;
+	width: 100%;
+	background: #222222;
 }
 
 	footer div {
@@ -358,42 +399,54 @@ footer {
 		ancho 940px
 		color del texto hexadecimal 777777*/
 		display: table;
+		display: block; 
+		margin: 0px auto;
+		padding: 44px 0px;
+		width: 940px;
+		color: #777777;
 		
 	}
 	
 		footer div section {
 			display: table-cell;
 			/*ancho de 300px*/
-			
+			width: 300px;
 		}
 		
 		footer div #about, footer div #blogroll {
 			/*margen derecho de 20px*/
-			
+			margin-right: 20px;
 		}
 		
 	footer h3 {
 		/* color de texto ffffff */
-		
+		color: #ffffff;
 	}
 	
 	footer a {
 		/* color de texto 999999 */ 
+		color: #999999;
 	}
 	
 		footer a:hover {
 			/* color de texto 170,215,18 en notacion rgb con una transparencia de 0,8
 			Sin línea inferior que indique que es un hiperenlace*/
+			color: rgb(170,215,18); 
+			opacity: 0.8;
+			
 		}	
 	footer ul {
 	/* margen izquierdo de 40px el resto debe ser 0
 	la viñeta de los elementos de lista debe ser un cuadrado
 	color del texto 565656 
 	*/
+	margin: 40px 0px 0px 0px;
+	list-style: square;
+	color: #565656;
 	
 	}
 	
 		footer ul li a {
 			/*se debe visualizar como elemento de bloque*/
-			
+			display:block;
 		}
