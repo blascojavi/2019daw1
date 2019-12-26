@@ -13,8 +13,7 @@ public class Persona {
         this.nombre = nombre ; 
         
     }
-    //GETERS AND SETTERS 
-    
+
     public void setNif (String nif){
         this.nif = nif; 
     }
@@ -40,11 +39,11 @@ public class Persona {
     }
     
     public boolean igual(String nif){
-        if (this.nif == nif){
+        if (this.nif.equals(nif)){
             return true; 
         }
         return false; 
     }
-    
-    
+
+
 }

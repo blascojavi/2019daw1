@@ -8,15 +8,18 @@ import java.util.Set;
 
 public class CuentaBancaria {
     private long numCuenta;
-    private Persona titular; 
+    private Set<Persona> titulares = new HashSet<>();
     private Set<Persona> autorizados = new HashSet<>();
-    private double saldo; 
+    private double saldo;
+    private final String TITULAR_NO_ENCONTRADO = "NO SE HA ENCONTRADO NINGÚN TITULAR CON EL NIF ";
+    private final String TITULAR_A_CERO = "LA CUENTA NO PUEDE QUEDARSE SIN TITULARES";
+    private final String TITULAR_ELIMINADO = "SE HA ELIMINADO DE LA LISTA DE TITULARES ";
     
     private final double CANTIDAD_CERO = 0.0; 
     
-    public CuentaBancaria(long nCuenta , Persona titular ){
+    public CuentaBancaria(long nCuenta , Set<Persona> titulares ){
         this.numCuenta = nCuenta; 
-        this.titular = titular;
+        this.titulares = titulares;
         this.saldo = saldo; 
     }
     
@@ -24,8 +27,8 @@ public class CuentaBancaria {
     public long getNumCuenta(){
         return this.numCuenta;
     }
-    public Persona getTitular(){
-        return this.titular; 
+    public Set<Persona> getTitular(){
+        return this.titulares;
     }
     public Set<Persona> getAutorizados(){
         return autorizados; 
@@ -43,10 +46,44 @@ public class CuentaBancaria {
         autorizados.add(autorizado); 
         return true; 
     }
-    
-    public boolean desautorizar(String dni){
-        if(this.existe(dni) !=null ){
-           return autorizados.remove(this.existe(dni));
+
+    public boolean nuevoTitular(Persona nuevoTitular){
+        if(esTitular(nuevoTitular.getNif())== null){
+            titulares.add(nuevoTitular);
+            System.out.println("Se ha incluido un nuevo titular " + nuevoTitular.getNombre());
+            return true;
+        }else{
+
+            System.out.println(nuevoTitular.getNombre() + "Ya es un titular autorizado ");
+            return false;
+        }
+
+    }
+
+    public String eliminarTitular(String nif){
+
+        if(titulares.size() == 1) {
+            return TITULAR_A_CERO;
+        }
+
+        for (Persona titular : titulares){
+            if(titular.getNif().equals(nif)){
+                titulares.remove(titular);
+                return titular + TITULAR_ELIMINADO;
+            }else{
+                return TITULAR_NO_ENCONTRADO + nif;
+            }
+
+        }
+        return null ;
+
+    }
+
+
+    public boolean desautorizar(String nif){
+        if(this.existe(nif) !=null ){
+            autorizados.remove(nif);
+            return true;
         }
         return false; 
     }
@@ -73,7 +110,7 @@ public class CuentaBancaria {
     public String informacionCuenta(){
         
         String datosTitular =  "Aqui tiene los datos solicitados : \n"
-                +"Numero de cuenta :" + this.numCuenta  + " - " + this.titular + "\n" ;
+                +"Numero de cuenta :" + this.numCuenta  + " - " + this.titulares + "\n" ;
         
         if (this.autorizados.size() > 0 ){
           datosTitular =  datosTitular.concat("AUTORIZADOS:\n" + this.autorizados.toString());
@@ -82,13 +119,22 @@ public class CuentaBancaria {
         
     }
     
-    public Persona existe(String dni) {
+    public Persona existe(String nif) {
         for(Persona autorizado : this.autorizados ){
-            if (autorizado.igual(dni) ){
+            if (autorizado.igual(nif)){
                 return autorizado;
             }
         }
            return null;   
+    }
+
+    public Persona esTitular(String nif){
+            for(Persona titular : titulares){
+                if(titular.getNif().equals(nif)){
+                    return titular;
+                }
+            }
+        return null;
     }
         
       

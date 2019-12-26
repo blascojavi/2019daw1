@@ -1,16 +1,22 @@
 
 package gestionbancaria;
 
+import org.jetbrains.annotations.NotNull;
+
+import java.util.HashSet;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.Set;
 
 public class Principal {
     static Scanner sc = new Scanner(System.in);
     public static void main(String[] args) {
         String respuesta = "0";
-        Persona titular = new Persona("33444666S", "Raquel Lopez");
-        Persona autorizado = new Persona("24378964K" , "Antonio Ferrer"); 
-        CuentaBancaria cuenta = new CuentaBancaria(123456789, titular);
+        Set<Persona> titulares = new HashSet<>();
+        Persona titularPrincipal = new Persona("33444666S", "Antonio Ferrer");
+        titulares.add(titularPrincipal);
+        Persona autorizado = new Persona("444444g" , "Pepe sancho");
+        CuentaBancaria cuenta = new CuentaBancaria(123456789, titulares);
 
         do {
             respuesta = menu();
@@ -34,6 +40,12 @@ public class Principal {
                 case "5": 
                     desautorizar(cuenta);
                      break;
+                case "6":
+                    nuevoTitular(cuenta);
+                    break;
+                case "7":
+                    eliminaTitular(cuenta);
+                    break;
                 default:
                     System.out.println("Debe seleccionar un numero correcto");
             }
@@ -50,6 +62,8 @@ public class Principal {
         System.out.println("3-Informacion de la cuenta.");
         System.out.println("4-Autorizar.");
         System.out.println("5-Desautorizar.");
+        System.out.println("6-Nuevo titular.");
+        System.out.println("7-Eliminar titular.");
         System.out.println("0-Salir\n");
         respuesta = sc.nextLine();
         return respuesta;
@@ -94,17 +108,51 @@ public class Principal {
 
     }
     
-    public static void autorizar(CuentaBancaria cuenta){
-        System.out.println("Indiqueme el DNI de la persona a autorizar: ");
-        String dni = sc.next();
-        System.out.println("Indique nombre y apellidos de la persona a autorizar: ");
-        String nombre = sc.next();
-        cuenta.autorizar(dni,nombre);
+    public static void autorizar( CuentaBancaria cuenta){
+
+        System.out.println("Nif de la persona a autorizar : ");
+        String nif = sc.nextLine();
+        System.out.println("nombre de la persona a autorizar: ");
+        String nombre = sc.nextLine();
+
+        Persona nuevoAutorizado = new Persona(nif , nombre);
+
+        if (cuenta.autorizar(nuevoAutorizado)){
+            System.out.println(nuevoAutorizado.getNombre() + " Ha sido autorizado con exito.");
+        }else{
+            System.out.println(nuevoAutorizado.getNombre() + " No ha podido ser autorizado , revise los datos");
+        }
+
     }
 
     public static void desautorizar(CuentaBancaria cuenta){
-        
+
+        System.out.println("NIF de la persona a DESAUTORIZAR: ");
+        String nif = sc.nextLine();
+
+        if(cuenta.desautorizar(nif)){
+            System.out.println("ha sido desautorizada");
+        }else{
+            System.out.println("No se ha podido proceder a la desautorización");
+        }
+
     }
-    
+
+    public static void nuevoTitular(CuentaBancaria cuenta){
+        System.out.println("Introduza el NIF del nuevo titular : ");
+        String nif = sc.nextLine();
+        System.out.println("Introduza el NOMBRE del nuevo titular : ");
+        String nombre = sc.nextLine();
+
+        Persona nuevoTitular = new Persona(nif , nombre);
+        cuenta.nuevoTitular(nuevoTitular);
+    }
+
+    public static void eliminaTitular(CuentaBancaria cuenta){
+        System.out.println("Introduzca el nif del titular a eliminar :  ");
+        String nif = sc.nextLine();
+
+        System.out.println(cuenta.eliminarTitular(nif));
+    }
     
 }
