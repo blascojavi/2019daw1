@@ -33,6 +33,9 @@ public class Principal {
                     case "6": // NUEVO TITULAR
                         addTitular(cuenta);
                         break;
+                    case "7": // NUEVO TITULAR
+                        deleteTitular(cuenta);
+                        break;
                     case "0":
                         System.out.println("Gracias por usar nuestra aplicacion");
                         break;
@@ -45,13 +48,9 @@ public class Principal {
                 System.out.println();
             }
         } while (!respuesta.equals("0"));
-
     }
 
-
-
     public static String menu() {
-        Scanner sc = new Scanner(System.in);
         String respuesta;
         System.out.println("GESTION DE CUENTA BANCARIA");
         System.out.println("1-Ingresar dinero.");
@@ -60,31 +59,35 @@ public class Principal {
         System.out.println("4-Autorizar una persona.");
         System.out.println("5-Desautorizar una persona.");
         System.out.println("6-Añadir nuevo titular.");
+        System.out.println("7-Eliminar titular.");
         System.out.println("0-Salir\n");
-        respuesta = sc.nextLine();
+        respuesta = getScanner().nextLine();
 
         return respuesta;
     }
 
     public static void ingresar(CuentaBancaria cuenta) {
-        double cantidad, saldo;
-        Scanner sc = new Scanner(System.in);
-
+        double cantidad;
+        System.out.println("Indique su NIF porfavor :");
+        String nifRealiza = getScanner().nextLine();
         System.out.println("¿Cuánto dinero desea ingresar?");
-        cantidad = sc.nextDouble();
-        saldo = cuenta.ingresar(cantidad);
-        System.out.println("Se ha ingresado: " + cantidad + "€ .Su saldo total es de: " + saldo + "€");
+        cantidad = getScanner().nextDouble();
+        System.out.println("Descripción del movimiento: ");
+        String descripcion = getScanner().nextLine();
+        cuenta.ingresar(cantidad,nifRealiza,descripcion);
+        System.out.println("Se ha ingresado: " + cantidad + "€ .Su saldo total es de: " + cuenta.getSaldo() + "€");
         System.out.println();
     }
 
     public static void sacar(CuentaBancaria cuenta) {
-        double cantidad, saldo;
-        Scanner sc = new Scanner(System.in);
-
+        double cantidad;
+        System.out.println("Indique su NIF porfavor :");
+        String nifRealiza = getScanner().nextLine();
         System.out.println("¿Cuánto dinero desea sacar?");
-        cantidad = sc.nextDouble();
-
-        if (cuenta.sacar(cantidad)) {
+        cantidad = getScanner().nextDouble();
+        System.out.println("Descripción del movimiento: ");
+        String descripcion = getScanner().nextLine();
+        if (cuenta.sacar(cantidad,nifRealiza,descripcion)) {
             System.out.println("Se ha sacado: " + cantidad + "€ .Su saldo total es de: " + cuenta.getSaldo() + "€");
         } else {
             System.out.println("No hay suficiente dinero en la cuenta para sacar " + cantidad + "€");
@@ -100,13 +103,10 @@ public class Principal {
 
     public static void autorizar(CuentaBancaria cuenta) {
         String nif, nombre;
-        Scanner sc = new Scanner(System.in);
-
         System.out.println("Nif de la persona que desea autorizar: ");
-        nif = sc.nextLine();
+        nif = getScanner().nextLine().toUpperCase();
         System.out.println("Nombre de la persona que desea autorizar: ");
-        nombre = sc.nextLine();
-
+        nombre = getScanner().nextLine();
         if (cuenta.autorizar(nif, nombre)) {
             System.out.println("Se ha autorizado a: " + nombre);
         } else {
@@ -118,11 +118,8 @@ public class Principal {
     public static void desautorizar(CuentaBancaria cuenta) {
         String nif;
         boolean desautorizado = false;
-        Scanner sc = new Scanner(System.in);
-
         System.out.println("Escriba el nif de la persona que desea desautorizar: ");
-        nif = sc.nextLine();
-
+        nif = getScanner().nextLine().toUpperCase();
         desautorizado = cuenta.desautorizar(nif);
         if (desautorizado) {
             System.out.println("Se ha desautorizado al nif " + nif);
@@ -131,16 +128,24 @@ public class Principal {
         }
     }
 
-    //TODO: crear Scanner global ya que se usa mucho
     private static void addTitular(CuentaBancaria cuenta) {
-        Scanner sc = new Scanner(System.in);
         System.out.println("Indica el Nif del nuevo titular : ");
-        String nuevoTitularNif =  sc.nextLine();
+        String nuevoTitularNif = getScanner().nextLine().toUpperCase();
         System.out.println("Indica el nombre del nuevo titular : ");
-        String nuevoTitularNombre = sc.nextLine();
+        String nuevoTitularNombre = getScanner().nextLine();
 
         Persona nuevoTitular = new Persona(nuevoTitularNif, nuevoTitularNombre);
         cuenta.addNuevoTitular(nuevoTitular);
+    }
+
+    private static void deleteTitular(CuentaBancaria cuenta) {
+        System.out.println("Indique el NIF del titular a eliminar: ");
+        System.out.println(cuenta.deleteTitular(getScanner().nextLine()));
+    }
+
+    private static Scanner getScanner() {
+        Scanner scan = new Scanner(System.in);
+        return scan;
     }
 
 }
