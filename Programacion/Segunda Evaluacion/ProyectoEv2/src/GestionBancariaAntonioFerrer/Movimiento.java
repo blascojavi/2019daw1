@@ -45,6 +45,6 @@ public class Movimiento {
         DateTimeFormatter formatDay = DateTimeFormatter.ofPattern("YYYY/MM/DD");
         DateTimeFormatter formatHour = DateTimeFormatter.ofPattern("HH:MM:SS");
         return fecha.format(formatDay) + "T" + fecha.format(formatHour) +
-                " - " + cantidad + "€ " + descripcion ;
+                "." + nifRealizaMovimineto + " " + cantidad + "€ " + descripcion ;
     }
 }

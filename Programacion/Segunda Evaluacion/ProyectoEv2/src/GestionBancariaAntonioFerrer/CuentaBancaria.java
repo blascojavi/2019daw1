@@ -11,6 +11,9 @@ import java.util.Set;
 
 public class CuentaBancaria {
 
+    public static final String ANSI_RED = "\u001B[31m";
+    public static final String ANSI_GREEN = "\u001B[32m";
+    public static final String ANSI_RESET = "\u001B[0m";
     public static final int MINIMO_NUM_TITULARES = 1;
     public static final Persona NO_EXISTE = null;
     private long numCuenta;
@@ -30,13 +33,6 @@ public class CuentaBancaria {
         return numCuenta;
     }
 
-    public Set<Persona> getTitular() {
-        return titulares;
-    }
-
-    public void setTitular(Persona titular) {
-        this.titulares.add(titular);
-    }
 
     public double getSaldo() {
         return saldo;
@@ -104,10 +100,10 @@ public class CuentaBancaria {
     public boolean addNuevoTitular(Persona nuevoTitular){
         if(esTitular(nuevoTitular.getNif()) == NO_EXISTE){
             titulares.add(nuevoTitular);
-            System.out.println("Nuevo titular añadido");
+
             return true;
         }else{
-            System.out.println("No ha podido añadirse el titular (posiblemente ya exista).");
+
             return false;
         }
     }
@@ -116,12 +112,12 @@ public class CuentaBancaria {
         if(titularAeliminar != NO_EXISTE ){
             if(titulares.size() > MINIMO_NUM_TITULARES){
                 titulares.remove(titularAeliminar);
-                return "Se ha ELIMINADO el titular con el nif " + nif;
+                return ANSI_GREEN + "Se ha ELIMINADO el titular con el nif "+ ANSI_RESET  + nif ;
             }else{
-                return "No se puede eliminar el único titular de la cuenta";
+                return ANSI_RED +"No se puede eliminar el único titular de la cuenta" + ANSI_RESET;
             }
         }else{
-            return "no se ha encontrado el titular con el NIF : " + nif ;
+            return ANSI_RED + "no se ha encontrado el titular con el NIF : "+ANSI_RESET + nif ;
         }
     }
 
@@ -129,7 +125,9 @@ public class CuentaBancaria {
         String movimientosEncontrados = "";
         switch (Character.toUpperCase(tipo)){
             case 'T':
-                movimientosEncontrados = movimientos.toString();
+                for (Movimiento movimiento : movimientos){
+                    movimientosEncontrados = movimientosEncontrados.concat(movimiento.toString() + "\n");
+                }
                 break;
             case 'E':
                 List<Movimiento> extracciones = new ArrayList<>();
@@ -137,20 +135,24 @@ public class CuentaBancaria {
                     if(movimiento.getCantidad() < 0 ){
                         extracciones.add(movimiento);
                     }
-                    movimientosEncontrados = extracciones.toString();
+                    for (Movimiento extraccion : extracciones){
+                        movimientosEncontrados = movimientosEncontrados.concat(extraccion.toString() + "\n");
+                    }
                 }
                 break;
             case 'I':
-                List<Movimiento> ingresos = new ArrayList<Movimiento>();
+                List<Movimiento> ingresos = new ArrayList<Movimiento>(); //TODO: se repiten al imprimir .
                 for(Movimiento movimiento : movimientos){
                     if(movimiento.getCantidad() >= 0 ){
                         ingresos.add(movimiento);
                     }
-                    movimientosEncontrados = ingresos.toString();
+                    for (Movimiento ingreso : ingresos){
+                        movimientosEncontrados = movimientosEncontrados.concat(ingreso.toString() + "\n");
+                    }
                 }
                 break;
             default:
-                movimientosEncontrados = "NO EXISTE ESA OPCIÓN";
+                movimientosEncontrados = ANSI_RED + "NO EXISTE ESA OPCIÓN" + ANSI_RESET;
         }
         return movimientosEncontrados;
     }
@@ -179,8 +181,7 @@ public class CuentaBancaria {
 
     @Override
     public String toString() {
-        return "Numero de cuenta : " + numCuenta +
-                "Saldo actual: " + saldo +
-                '\n';
+        return "Nº cuenta : " + numCuenta +
+                " Saldo : " + saldo;
     }
 }
