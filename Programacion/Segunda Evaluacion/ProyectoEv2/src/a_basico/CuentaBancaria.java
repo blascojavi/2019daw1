@@ -60,7 +60,8 @@ public class CuentaBancaria {
     public boolean sacar(double cantidad , String nifRealiza, String descripcion) {
         boolean extraidoOk = false;
         if (cantidad <= saldo && cantidad >= 0) {
-            Movimiento extraccion = new Movimiento(nifRealiza , cantidad , descripcion);
+
+            Movimiento extraccion = new Movimiento(nifRealiza , (cantidad)*-1 , descripcion);
             movimientos.add(extraccion);
             saldo = saldo - cantidad;
             extraidoOk = true;
@@ -131,12 +132,10 @@ public class CuentaBancaria {
         String movimientosEncontrados = "";
         switch (Character.toUpperCase(tipo)){
             case 'T':
-                //TODOS
                 movimientosEncontrados = movimientos.toString();
                 break;
             case 'E':
-                List<Movimiento> extracciones = new ArrayList<Movimiento>();
-                //extraciones
+                List<Movimiento> extracciones = new ArrayList<>();
                 for(Movimiento movimiento : movimientos){
                     if(movimiento.getCantidad() < 0 ){
                         extracciones.add(movimiento);
@@ -146,7 +145,6 @@ public class CuentaBancaria {
                 break;
             case 'I':
                 List<Movimiento> ingresos = new ArrayList<Movimiento>();
-                //extraciones
                 for(Movimiento movimiento : movimientos){
                     if(movimiento.getCantidad() >= 0 ){
                         ingresos.add(movimiento);
@@ -182,4 +180,10 @@ public class CuentaBancaria {
         return encontrado;
     }
 
+    @Override
+    public String toString() {
+        return "numCuenta: " + numCuenta +
+                ", saldo: " + saldo +
+                '}';
+    }
 }

@@ -11,10 +11,17 @@ public class Banco {
     private CuentaBancaria NO_EXISTE_CUENTA;
     private Map<Long, CuentaBancaria> cuentas = new HashMap<>();
 
+    public Map<Long, CuentaBancaria> getCuentas() {
+        return cuentas;
+    }
+
     public void datosInicio(){
         CuentaBancaria dummy1 = new CuentaBancaria(222222 , new Persona("24242424K" ,"Antonio Ferrer"));
+        dummy1.ingresar(1 ,"000", "saldoInicial");
         CuentaBancaria dummy2 = new CuentaBancaria(333333 , new Persona("37373737L" ,"Juanito bananas"));
+        dummy2.ingresar(1 ,"000" , "saldoInicial");
         CuentaBancaria dummy3 = new CuentaBancaria(444444 , new Persona("86868686M" ,"Pepita FLores"));
+        dummy3.ingresar(1 ,"000" , "saldoInicial");
         cuentas.put(dummy1.getNumCuenta(),dummy1);
         cuentas.put(dummy2.getNumCuenta(),dummy2);
         cuentas.put(dummy3.getNumCuenta(),dummy3);
@@ -28,12 +35,14 @@ public class Banco {
     }
 
     public Set<CuentaBancaria> listarCuentas(double limite){
-       Set<CuentaBancaria> cuentaLimiteSuperado = new HashSet<>();
+        Set<CuentaBancaria> cuentaLimiteSuperado = new HashSet<>();
        for (CuentaBancaria cuenta : cuentas.values()){
-            if(cuenta.getSaldo() > limite){
+            if(cuenta.getSaldo() >= limite){
                 cuentaLimiteSuperado.add(cuenta);
             }
        }
        return cuentaLimiteSuperado;
     }
 }
+
+

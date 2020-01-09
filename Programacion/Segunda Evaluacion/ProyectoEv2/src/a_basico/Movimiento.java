@@ -39,6 +39,9 @@ public class Movimiento {
         return descripcion;
     }
 
+
+    //TODO: formatear mejor los movimientos ,Redefine el método toString() para mostrar el formato: "2019/12/22T16:34:56.123 -
+    // 500€ pago recibo"
     @Override
     public String toString() {
         return "Movimiento{" +

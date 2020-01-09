@@ -61,10 +61,10 @@ public class Principal {
         System.out.println("6-Añadir nuevo titular.");
         System.out.println("7-Eliminar titular.");
         System.out.println("0-Salir\n");
-        respuesta = getScanner().nextLine();
+    respuesta = getScanner().nextLine();
 
         return respuesta;
-    }
+}
 
     public static void ingresar(CuentaBancaria cuenta) {
         double cantidad;
