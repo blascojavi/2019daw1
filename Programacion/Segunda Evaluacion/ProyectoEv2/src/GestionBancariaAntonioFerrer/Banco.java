@@ -1,4 +1,4 @@
-package a_basico;
+package GestionBancariaAntonioFerrer;
 
 import java.util.HashMap;
 import java.util.HashSet;

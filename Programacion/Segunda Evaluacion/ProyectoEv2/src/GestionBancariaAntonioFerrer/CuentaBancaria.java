@@ -1,7 +1,4 @@
-package a_basico;
-
-import com.sun.deploy.security.MSCryptoDSASignature;
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
+package GestionBancariaAntonioFerrer;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -182,8 +179,8 @@ public class CuentaBancaria {
 
     @Override
     public String toString() {
-        return "numCuenta: " + numCuenta +
-                ", saldo: " + saldo +
-                '}';
+        return "Numero de cuenta : " + numCuenta +
+                "Saldo actual: " + saldo +
+                '\n';
     }
 }

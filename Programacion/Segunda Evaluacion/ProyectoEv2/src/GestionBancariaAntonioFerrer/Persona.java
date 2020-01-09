@@ -1,5 +1,5 @@
 
-package a_basico;
+package GestionBancariaAntonioFerrer;
 
 
 public class Persona {

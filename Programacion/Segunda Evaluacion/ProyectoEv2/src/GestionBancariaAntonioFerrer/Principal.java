@@ -1,11 +1,11 @@
-package a_basico;
+package GestionBancariaAntonioFerrer;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
 
-public class PrincipalNuevo {
+public class Principal {
     private static final String MENU_ATRAS = "0" ;
     private static final String RESET_SELECTOR = "0" ;
     private static final String SALIR = "0";
@@ -14,28 +14,34 @@ public class PrincipalNuevo {
     private static String regExpTipoMovimineto = "^[TEI]$";
 
     public static void main(String[] args) {
-         banco.datosInicio();
-        do {
-          try {
-              respuesta = mainMenu();
-              switch(respuesta) {
-                  case "1":
-                      listarCuentas(banco);
-                      break;
-                  case "2":
-                      seleccionarCuentaYoperar(banco);
-                      break;
-                  case "0":
-                      respuesta = SALIR;
-                      break;
-              }
-          }catch (InputMismatchException e) {
-              System.out.println("ERROR:Debe introducir un número");
-              System.out.println();
-          }
-        }while(!respuesta.equals(MENU_ATRAS));
-        System.out.println("Gracias por usar nuestros servicios.");
+        banco.datosInicio();
+        System.out.println("GESTION BANCARIA\n");
+        menuInicial();
     }
+        private static void menuInicial(){
+            do {
+                try {
+                    respuesta = mainMenu();
+                    switch(respuesta) {
+                        case "1":
+                            listarCuentas(banco);
+                            break;
+                        case "2":
+                            seleccionarCuentaYoperar(banco);
+                            break;
+                        case "0":
+                            respuesta = SALIR;
+                            System.out.println("Gracias por usar nuestros servicios.");
+                            break;
+                    }
+                }catch (InputMismatchException e) {
+                    System.out.println("ERROR:Debe introducir un número");
+                    System.out.println();
+                }
+            }while(!respuesta.equals(MENU_ATRAS));
+
+        }
+
 
     private static void subMenuSelector(CuentaBancaria cuenta) {
         do {
@@ -67,7 +73,7 @@ public class PrincipalNuevo {
                         listarMovimientos(cuenta);
                         break;
                     case "0":
-                        respuesta = MENU_ATRAS;
+                        menuInicial();
                         break;
                     default:
                         System.out.println("Debe seleccionar un numero correcto");
@@ -80,7 +86,6 @@ public class PrincipalNuevo {
     }
 
     private static String mainMenu() {
-        System.out.println("GESTION DE CUENTA BANCARIA\n");
         System.out.println("MENÚ PRINCIPAL \n\n");
         System.out.println("1. Listar Cuentas que superen cantidad límite.");
         System.out.println("2. Seleccionar una cuenta y operar.");
