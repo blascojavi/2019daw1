@@ -7,8 +7,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-
-
 public class CuentaBancaria {
 
     public static final String ANSI_RED = "\u001B[31m";
@@ -16,11 +14,11 @@ public class CuentaBancaria {
     public static final String ANSI_RESET = "\u001B[0m";
     public static final int MINIMO_NUM_TITULARES = 1;
     public static final Persona NO_EXISTE = null;
-    private long numCuenta;
+    private final long numCuenta;
     private double saldo;
-    private Set<Persona> autorizados = new HashSet<>();
-    private Set<Persona> titulares = new HashSet<>();
-    private List<Movimiento> movimientos = new ArrayList<Movimiento>();
+    private final Set<Persona> autorizados = new HashSet<>();
+    private final Set<Persona> titulares = new HashSet<>();
+    private final List<Movimiento> movimientos = new ArrayList<>();
 
 
     public CuentaBancaria(long ncuenta, Persona titularPrincipal) {
@@ -33,11 +31,9 @@ public class CuentaBancaria {
         return numCuenta;
     }
 
-
     public double getSaldo() {
         return saldo;
     }
-
 
     public boolean ingresar(double cantidad , String nifRealiza, String descripcion) {
         boolean ingresadoOk = false;
@@ -49,7 +45,6 @@ public class CuentaBancaria {
         }
         return ingresadoOk;
     }
-
     public boolean sacar(double cantidad , String nifRealiza, String descripcion) {
         boolean extraidoOk = false;
         if (cantidad <= saldo && cantidad >= 0) {
@@ -61,7 +56,6 @@ public class CuentaBancaria {
         }
         return extraidoOk;
     }
-
     public String informacionCuenta() {
         DecimalFormat f = new DecimalFormat("###,###.##");
 
@@ -72,7 +66,6 @@ public class CuentaBancaria {
         resultado += "Saldo: " + f.format(saldo) + "€";
         return resultado;
     }
-
     public boolean autorizar(String dni, String nombre) {
         Persona autorizado = new Persona(dni, nombre);
         boolean resultado = false;
@@ -86,7 +79,6 @@ public class CuentaBancaria {
         }
         return resultado;
     }
-
     public boolean desautorizar(String dni) {
         boolean desautorizado = false;
         Persona p = existe(dni);
@@ -120,7 +112,6 @@ public class CuentaBancaria {
             return ANSI_RED + "no se ha encontrado el titular con el NIF : "+ANSI_RESET + nif ;
         }
     }
-
     public String listarMovimientos(char tipo){
         String movimientosEncontrados = "";
         switch (Character.toUpperCase(tipo)){
@@ -135,20 +126,20 @@ public class CuentaBancaria {
                     if(movimiento.getCantidad() < 0 ){
                         extracciones.add(movimiento);
                     }
-                    for (Movimiento extraccion : extracciones){
-                        movimientosEncontrados = movimientosEncontrados.concat(extraccion.toString() + "\n");
-                    }
+                }
+                for (Movimiento extraccion : extracciones){
+                    movimientosEncontrados = movimientosEncontrados.concat(extraccion.toString() + "\n");
                 }
                 break;
             case 'I':
-                List<Movimiento> ingresos = new ArrayList<Movimiento>(); //TODO: se repiten al imprimir .
-                for(Movimiento movimiento : movimientos){
-                    if(movimiento.getCantidad() >= 0 ){
+                List<Movimiento> ingresos = new ArrayList<>();
+                for(Movimiento movimiento : movimientos) {
+                    if (movimiento.getCantidad() >= 0) {
                         ingresos.add(movimiento);
                     }
-                    for (Movimiento ingreso : ingresos){
+                }
+                for (Movimiento ingreso : ingresos){
                         movimientosEncontrados = movimientosEncontrados.concat(ingreso.toString() + "\n");
-                    }
                 }
                 break;
             default:
@@ -156,7 +147,6 @@ public class CuentaBancaria {
         }
         return movimientosEncontrados;
     }
-
     public Persona esTitular(String nif) {
         Persona existeTitular = NO_EXISTE;
         for (Persona titular : titulares){
@@ -167,7 +157,7 @@ public class CuentaBancaria {
         return existeTitular;
     }
     public Persona existe(String nif) {
-        Persona personaAbuscar = NO_EXISTE;
+        Persona personaAbuscar;
         Persona encontrado = NO_EXISTE;
         Iterator<Persona> it = this.autorizados.iterator();
         while (it.hasNext() && encontrado == null) {
@@ -178,7 +168,6 @@ public class CuentaBancaria {
         }
         return encontrado;
     }
-
     @Override
     public String toString() {
         return "Nº cuenta : " + numCuenta +

@@ -6,9 +6,9 @@ import java.time.format.DateTimeFormatter;
 public class Movimiento {
 
     private LocalDateTime fecha;
-    private String nifRealizaMovimineto;
-    private Double cantidad ;
-    private String descripcion;
+    private final String nifRealizaMovimineto;
+    private final Double cantidad ;
+    private final String descripcion;
 
     public Movimiento(LocalDateTime fecha, String nifRealizaMovimineto, Double cantidad, String descripcion) {
         this.fecha = fecha;
@@ -18,7 +18,7 @@ public class Movimiento {
     }
 
     public Movimiento(String nifRealizaMovimiento, Double cantidad, String descripcion) {
-        this.fecha = fecha.now();
+        this.fecha = LocalDateTime.now();
         this.nifRealizaMovimineto = nifRealizaMovimiento;
         this.cantidad = cantidad;
         this.descripcion = descripcion;

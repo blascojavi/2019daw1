@@ -1,17 +1,22 @@
 package GestionBancariaAntonioFerrer;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 public class Banco {
-    private static final CuentaBancaria NO_EXISTE = null ;
-    private String nombreBanco ;
+    private String nombreBanco = "BANCO CENTRAL";
     private String numCuenta;
-    private CuentaBancaria NO_EXISTE_CUENTA = null;
-    private Map<Long, CuentaBancaria> cuentas = new HashMap<>();
-    Set<CuentaBancaria> cuentaLimiteSuperado = new HashSet<>();
-
+    private final CuentaBancaria NO_EXISTE_CUENTA = null;
+    private final Map<Long, CuentaBancaria> cuentas = new HashMap<>();
+    final Set<CuentaBancaria> cuentaLimiteSuperado = new HashSet<>();
     public Map<Long, CuentaBancaria> getCuentas() {
         return cuentas;
+    }
+
+    public String getNombreBanco() {
+        return nombreBanco;
     }
 
     public void datosInicio(){

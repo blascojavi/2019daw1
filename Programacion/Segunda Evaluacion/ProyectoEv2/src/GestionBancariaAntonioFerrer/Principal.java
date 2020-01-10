@@ -1,7 +1,6 @@
 package GestionBancariaAntonioFerrer;
 
 import java.util.InputMismatchException;
-import java.util.NoSuchElementException;
 import java.util.Scanner;
 import java.util.Set;
 import java.util.regex.Pattern;
@@ -19,12 +18,10 @@ public class Principal {
     private static final String SALIR = "0";
     private static final CuentaBancaria NO_EXISTE = null ;
     private static String respuesta = MENU_ATRAS;
-    private static Banco banco = new Banco();
-    private static String regExpTipoMovimineto = "^[TEI]$";
-
+    private static final Banco banco = new Banco();
     public static void main(String[] args) {
         banco.datosInicio();
-        System.out.println(ANSI_BLUE + "\nBANCO CENTRAL\n" + ANSI_RESET);
+        System.out.println(ANSI_BLUE + "\n"+banco.getNombreBanco()+"\n" + ANSI_RESET);
         menuInicial();
     }
 
@@ -132,7 +129,7 @@ public class Principal {
                         System.out.println(ANSI_RED + "Debe seleccionar un numero correcto" + ANSI_RESET);
                 }
             } catch (InputMismatchException e) {
-                System.out.println(ANSI_RED + "ERROR:   Debe introducir  un número" + ANSI_RESET);
+                System.out.println(ANSI_RED + "ERROR: Debe introducir un número" + ANSI_RESET);
                 System.out.println();
             }
         } while (!respuesta.equals(MENU_ATRAS));
@@ -169,7 +166,7 @@ public class Principal {
     public static void verInformacion(CuentaBancaria cuenta) {
         System.out.println("Aqui tiene la informacion solicitada");
         System.out.println(cuenta.informacionCuenta());
-        System.out.println("");
+        System.out.println();
     }
     private static void autorizarPersona(CuentaBancaria cuenta) {
         String nif, nombre;
@@ -186,7 +183,7 @@ public class Principal {
     }
     public static void desautorizarPersona(CuentaBancaria cuenta) {
         String nif;
-        boolean desautorizado = false;
+        boolean desautorizado;
         System.out.println("Escriba el nif de la persona que desea desautorizar: ");
         nif = getScanner().nextLine().toUpperCase();
         desautorizado = cuenta.desautorizar(nif);
@@ -221,17 +218,17 @@ public class Principal {
         System.out.println("I - Ingresos");
         do {
             String opcion = getScanner().next();
+            String regExpTipoMovimineto = "^[TEI]$";
             correctValue = Pattern.matches(regExpTipoMovimineto, opcion)? true : false;
             seleccion = opcion.charAt(0);
-        }while(correctValue = false);
+        }while(correctValue == true);
         System.out.println(cuenta.listarMovimientos(Character.toUpperCase((seleccion))));
         System.out.println("\n Saldo actual : " + cuenta.getSaldo());
     }
 
 
     private static Scanner getScanner(){
-        Scanner sc = new Scanner(System.in);
-        return sc;
+        return new Scanner(System.in);
     }
 
 }
