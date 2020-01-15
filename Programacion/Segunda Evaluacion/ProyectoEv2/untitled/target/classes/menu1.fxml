@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Menu1">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#4a5d6f" height="400.0" layoutX="-2.0" layoutY="-1.0" stroke="BLACK" strokeType="INSIDE" width="59.0" />
+      <Label layoutX="123.0" layoutY="57.0" text="ESTO ES EL PANEL 1 fondo debe ser blanco" />
+   </children>
+</AnchorPane>
