@@ -207,7 +207,7 @@ public class Principal {
     }
     private static void deleteTitular(CuentaBancaria cuenta) {
         System.out.println("Indique el NIF del titular a eliminar: ");
-        System.out.println(cuenta.deleteTitular(getScanner().nextLine()));
+        System.out.println(cuenta.deleteTitular(getScanner().nextLine().toUpperCase()));
     }
     private static void imprimirMovimientos(CuentaBancaria cuenta) {
         boolean correctValue = false;

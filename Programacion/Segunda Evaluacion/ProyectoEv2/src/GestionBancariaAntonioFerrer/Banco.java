@@ -10,7 +10,7 @@ public class Banco {
     private String numCuenta;
     private final CuentaBancaria NO_EXISTE_CUENTA = null;
     private final Map<Long, CuentaBancaria> cuentas = new HashMap<>();
-    final Set<CuentaBancaria> cuentaLimiteSuperado = new HashSet<>();
+
     public Map<Long, CuentaBancaria> getCuentas() {
         return cuentas;
     }
@@ -39,8 +39,9 @@ public class Banco {
     }
 
     public Set<CuentaBancaria> listarCuentas(double limite){
+        Set<CuentaBancaria> cuentaLimiteSuperado = new HashSet<>();
        for (CuentaBancaria cuenta : cuentas.values()){
-            if(cuenta.getSaldo() >= limite){
+            if(cuenta.getSaldo() > limite){
                 cuentaLimiteSuperado.add(cuenta);
             }
        }
