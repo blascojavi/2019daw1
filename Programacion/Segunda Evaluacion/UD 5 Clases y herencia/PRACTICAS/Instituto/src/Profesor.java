@@ -15,16 +15,23 @@ public class Profesor extends Persona {
      public void impartir(Asignatura asign){
           if(noSuperaHorasSemamanales(asign)){
                super.asignaturas.add(asign);
+               totalHoras = totalHoras + asign.getHorasSemanales();
           }
      }
 
      private boolean noSuperaHorasSemamanales(Asignatura asign) {
-          return super.totalHorasImparte() + asign.getHorasSemanales() < MAX_HORAS_SEMANAL;
+          return ((super.totalHoras + asign.getHorasSemanales()) < MAX_HORAS_SEMANAL);
+
      }
 
      @Override
      public String toString() {
-          return super.getNombre() + " Pertenece al departamento " + departamento + " e imparte las asignaturas : " + "\n"
-           + asignaturas + " (Total horas : " + super.totalHorasImparte()+"h )" ;
+          String  dataProfesor = super.getNombre() + " Pertenece al departamento " + departamento + " e imparte las asignaturas : " + "\n";
+          for (Asignatura asignaturaImpartida : asignaturas){
+              dataProfesor = dataProfesor.concat(asignaturaImpartida.getNombre() + " , " );
+          }
+
+           dataProfesor = dataProfesor.concat(" (Total horas : " + super.totalHoras +"h )") ;
+          return dataProfesor;
      }
 }

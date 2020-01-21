@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
 
         Asignatura asignatura1 = new Asignatura("PROG" , "Programación" , 8);
-        Asignatura asignatura2 = new Asignatura("BBDD" , "Bases de datos" , 3);
+        Asignatura asignatura2 = new Asignatura("BBDD" , "Bases de datos" , 5);
         Asignatura asignatura3 = new Asignatura("ED" , "Entornos de dasarrollo" , 3);
 
         Alumno alumno1 = new Alumno("Pepito" , "Calle 1 " , 1981 , "INFOR1");
@@ -21,12 +21,14 @@ public class Main {
         profe1.impartir(asignatura1);
         profe1.impartir(asignatura2);
         profe1.impartir(asignatura3);
+
         profe2.impartir(asignatura1);
         profe2.impartir(asignatura2);
 
         alumno1.matricular(asignatura1);
         alumno1.matricular(asignatura2);
         alumno1.matricular(asignatura3);
+
         alumno2.matricular(asignatura1);
         alumno2.matricular(asignatura3);
 

@@ -9,19 +9,11 @@ public class Persona {
     private String direccion;
     private int anyo_nacimiento;
     protected List<Asignatura> asignaturas = new ArrayList<>();
-    protected int totalHorasMatriculado = ZERO_HOURS;
-    protected int totalHorasImparte = ZERO_HOURS;
+    protected int totalHoras = ZERO_HOURS;
+
 
     public List<Asignatura> getAsignaturas() {
         return asignaturas;
-    }
-
-    public void setAsignaturas(List<Asignatura> asignaturas) {
-        this.asignaturas = asignaturas;
-    }
-
-
-    public Persona() {
     }
 
     public Persona(String nombre, String direccion, int anyo_nacimiento) {
@@ -34,28 +26,13 @@ public class Persona {
         return nombre;
     }
 
-    public String getDireccion() {
-        return direccion;
-    }
-
-    public int getAnyo_nacimiento() {
-        return anyo_nacimiento;
-    }
-
-
-    protected int totalHorasMatriculado() {
+    protected void totalHoras() {
         for (Asignatura asignatura : asignaturas){
-            totalHorasMatriculado += asignatura.getHorasSemanales();
+            totalHoras += asignatura.getHorasSemanales();
         }
-      return totalHorasMatriculado;
     }
 
-    protected int totalHorasImparte() {
-        for (Asignatura asignatura : asignaturas){
-            totalHorasImparte += asignatura.getHorasSemanales();
-        }
-        return totalHorasImparte;
-    }
+
 
     @Override
     public String toString() {

@@ -21,7 +21,6 @@ public class Asignatura {
 
     @Override
     public String toString() {
-
-        return " " + getNombre() + " ";
+        return nombre;
     }
 }
