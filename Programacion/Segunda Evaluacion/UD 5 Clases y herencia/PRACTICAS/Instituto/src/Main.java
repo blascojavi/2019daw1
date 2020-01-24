@@ -40,13 +40,13 @@ public class Main {
         listaAlumnosYProfesores.add(alumno2);
 
 
-        for(Persona personaenLista : listaAlumnosYProfesores){
-            if(isProfesor(personaenLista)){
-                System.out.println("PROFESOR -> " + personaenLista);
+        for(Persona personaEnLista : listaAlumnosYProfesores){
+            if(isProfesor(personaEnLista)){
+                System.out.println("PROFESOR -> " + personaEnLista);
 
             }
-            if(isAlumno(personaenLista)){
-                System.out.println("ALUMNO -> " + personaenLista);
+            if(isAlumno(personaEnLista)){
+                System.out.println("ALUMNO -> " + personaEnLista);
             }
         }
 
