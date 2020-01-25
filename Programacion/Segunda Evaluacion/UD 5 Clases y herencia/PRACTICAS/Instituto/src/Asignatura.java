@@ -11,8 +11,10 @@ public class Asignatura {
         this.horasSemanales = horasSemanales;
     }
 
-    public String getNombre() {
+    public String getNombre( ) {
         return nombre;
+
+
     }
 
     public int getHorasSemanales() {
