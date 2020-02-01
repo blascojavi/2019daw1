@@ -1,0 +1,8 @@
+.headTitle{
+    text-align: center ;
+    font-family: roboto;
+    border: 1px solid black;
+    border-radius: 10px;
+    background: grey;
+    color: whitesmoke;
+}
