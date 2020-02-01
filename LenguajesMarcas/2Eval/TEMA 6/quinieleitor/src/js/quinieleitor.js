@@ -1,6 +1,6 @@
 import {WIN_LOCAL, TIE, WIN_VISITOR,  tenBets, TOTAL_MATCHS, 
          btnAutoPressed, btnManualPressed,  
-        TEN_BETS, winnerTicket } from './values.js'; 
+        TEN_BETS, hitsByBet} from './values.js'; 
 
         window.addEventListener("load" , (e)=>{
                generateTenBets();
@@ -18,8 +18,7 @@ import {WIN_LOCAL, TIE, WIN_VISITOR,  tenBets, TOTAL_MATCHS,
         
         });
 
-        
-
+    
         const ramdomDices = ()=>{
             const MIN = 1 ; 
             const MAX = 10; 
@@ -56,21 +55,26 @@ import {WIN_LOCAL, TIE, WIN_VISITOR,  tenBets, TOTAL_MATCHS,
         };
 
         const calculateResults = (numOfBets) =>{
-            let hits = 0 ;
+            
             let winnerTicket = generateAutoWinnerTicket();
   
         tenBets.bets.forEach((bet , index)=>{
             console.log("apuesta numero: " , index );
-            
+            let hits = 0 ;
+
             bet.matches.forEach((betMatch ,indexMach)=>{
                 console.log(winnerTicket.matches[indexMach]);
                 console.log(betMatch);
-
-                //COMPARAR VALORES Y LLENAR VARIABLE OBJETO CON CADA NUMERO DE HITS POR APUESTA 
+                if(winnerTicket.matches[indexMach] === betMatch){
+                    hits++
+                    
+                }
+                hitsByBet[index]=hits;
+                
             })
-        })
-  
 
+        })
+        console.log(hitsByBet);
         }
 
         //Generar codigo para crear una quiniela 

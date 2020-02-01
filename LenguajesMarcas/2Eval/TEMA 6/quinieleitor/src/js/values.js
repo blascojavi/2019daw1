@@ -9,8 +9,8 @@ export const btnManualPressed = document.getElementById("btnManual");
 export const WIN_LOCAL = 0; 
 export const TIE = 1; 
 export const WIN_VISITOR = 2; 
-
-export let winnerTicket ;
-    export let tenBets = {
+export let tenBets = {
         bets: []
-    }
+    }; 
+export let hitsByBet = []; 
+
