@@ -3,6 +3,24 @@
     font-family: roboto;
     border: 1px solid black;
     border-radius: 10px;
-    background: grey;
+    background: lightblue;
     color: whitesmoke;
+}; 
+h2{
+    text-align: center;
+}
+
+.betsTable {
+    width: 85%;
+ }
+ th, td {
+    color: black;
+    width: 25%;
+    text-align: center;
+    vertical-align: center;
+    border-BOTTOM: 1px solid black;
+    border-collapse: collapse;
+ }
+tr:nth-child(even){
+    background: lightgrey;
 }

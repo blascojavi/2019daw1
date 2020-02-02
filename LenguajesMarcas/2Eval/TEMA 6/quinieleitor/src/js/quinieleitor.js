@@ -1,9 +1,10 @@
 import {WIN_LOCAL, TIE, WIN_VISITOR,  tenBets, TOTAL_MATCHS, 
-         btnAutoPressed, btnManualPressed,  
-        TEN_BETS, hitsByBet} from './values.js'; 
+         btnAutoPressed, btnManualPressed,tableBody,  
+        TEN_BETS, ONE_BET, hitsByBet} from './values.js'; 
 
         window.addEventListener("load" , (e)=>{
                generateTenBets();
+               renderBets();
         });
 
 
@@ -14,11 +15,11 @@ import {WIN_LOCAL, TIE, WIN_VISITOR,  tenBets, TOTAL_MATCHS,
 
         btnManualPressed.addEventListener("click" , ()=>{
             console.log("hiii MANUAL pressed");
+            calculateResults(ONE_BET);
 
         
         });
 
-    
         const ramdomDices = ()=>{
             const MIN = 1 ; 
             const MAX = 10; 
@@ -50,31 +51,37 @@ import {WIN_LOCAL, TIE, WIN_VISITOR,  tenBets, TOTAL_MATCHS,
         }
 
         const generateAutoWinnerTicket = ()=>{
-            console.log("GENERATING AUTO WINER TICKET ");
             return generateQuiniela();
         };
 
         const calculateResults = (numOfBets) =>{
-            
             let winnerTicket = generateAutoWinnerTicket();
-  
-        tenBets.bets.forEach((bet , index)=>{
-            console.log("apuesta numero: " , index );
-            let hits = 0 ;
-
-            bet.matches.forEach((betMatch ,indexMach)=>{
-                console.log(winnerTicket.matches[indexMach]);
-                console.log(betMatch);
-                if(winnerTicket.matches[indexMach] === betMatch){
-                    hits++
-                    
-                }
-                hitsByBet[index]=hits;
-                
+            tenBets.bets.forEach((bet , index)=>{
+                let hits = 0 ;
+                bet.matches.forEach((betMatch ,indexMach)=>{
+                    if(winnerTicket.matches[indexMach] === betMatch){
+                        hits++
+                        
+                    }
+                    hitsByBet[index]=hits;
+                })
             })
+        }
 
-        })
-        console.log(hitsByBet);
+        const renderBets = ()=>{
+        tenBets.bets.forEach((bets , indexBet)=>{
+            tableBody.innerHTML += 
+                `<tr>
+                    <td>Partido${indexBet+1}</td> </tr> `; 
+                    
+                })
+                        bets.matches.forEach((match , indexMatch) =>{
+                            tableBody.innerHTML += 
+                            `<td> ${match}</td>`
+        
+                        })
+
+            
         }
 
         //Generar codigo para crear una quiniela 
