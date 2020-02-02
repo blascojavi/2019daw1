@@ -1,5 +1,5 @@
 import {WIN_LOCAL, TIE, WIN_VISITOR,  tenBets, TOTAL_MATCHS, 
-         btnAutoPressed, btnManualPressed,tableBody,  
+         btnAutoPressed, btnManualPressed,tableBody,ticketWinner,  
         TEN_BETS, ONE_BET, hitsByBet} from './values.js'; 
 
         window.addEventListener("load" , (e)=>{
@@ -9,6 +9,8 @@ import {WIN_LOCAL, TIE, WIN_VISITOR,  tenBets, TOTAL_MATCHS,
 
         btnAutoPressed.addEventListener("click" , ()=>{
             calculateResults(TEN_BETS);
+            renderWinnerTicket(generateAutoWinnerTicket());
+            
         });
 
         btnManualPressed.addEventListener("click" , ()=>{
@@ -76,9 +78,20 @@ import {WIN_LOCAL, TIE, WIN_VISITOR,  tenBets, TOTAL_MATCHS,
                 })
                 tbodyBets += `</tr>`;
                 tableBody.innerHTML = tbodyBets;
-
-            
         }
+
+        const renderWinnerTicket = (winner) =>{
+            let winnerHtml = '<tr>'; 
+            winner.matches.forEach((match , indexMatch)=>{
+                winnerHtml += `<td>Partido${indexMatch+1}</td>`;
+            });
+            winnerHtml += `</tr><tr>` ;
+            winner.matches.forEach((match , indexMatch)=>{
+                winnerHtml += `<td>${match}</td>`;
+            });
+            winnerHtml += `</tr>` ;
+            ticketWinner.innerHTML = winnerHtml;
+        }; 
 
         //Generar codigo para crear una quiniela 
             ///Para generar por cada partido tirar dados 

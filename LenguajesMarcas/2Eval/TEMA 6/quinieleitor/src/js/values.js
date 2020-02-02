@@ -4,8 +4,10 @@ export const TEN_BETS = 10;
 export const ONE_BET = 1 ; 
 
 export const tableBody  = document.getElementById("tableBody");
+export const ticketWinner  = document.getElementById("ticketWinner");
 export const btnAutoPressed = document.getElementById("btnAuto"); 
 export const btnManualPressed = document.getElementById("btnManual"); 
+
 
 export const WIN_LOCAL = 0; 
 export const TIE = 1; 
