@@ -7,9 +7,7 @@ import {WIN_LOCAL, TIE, WIN_VISITOR,  tenBets, TOTAL_MATCHS,
                renderBets();
         });
 
-
         btnAutoPressed.addEventListener("click" , ()=>{
-               
             calculateResults(TEN_BETS);
         });
 
