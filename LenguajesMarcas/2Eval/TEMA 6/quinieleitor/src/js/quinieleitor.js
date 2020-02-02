@@ -69,17 +69,15 @@ import {WIN_LOCAL, TIE, WIN_VISITOR,  tenBets, TOTAL_MATCHS,
         }
 
         const renderBets = ()=>{
-        tenBets.bets.forEach((bets , indexBet)=>{
-            tableBody.innerHTML += 
-                `<tr>
-                    <td>Partido${indexBet+1}</td> </tr> `; 
-                    
+            let tbodyBets = `` ; 
+            tenBets.bets.map((bets , indexBet)=>{
+                tbodyBets += `<tr><td>Partido${indexBet+1}</td>`; 
+                    bets.matches.map((match ,indexMatch)=>{
+                    tbodyBets += `<td>${match}</td>`;    
+                    })
                 })
-                        bets.matches.forEach((match , indexMatch) =>{
-                            tableBody.innerHTML += 
-                            `<td> ${match}</td>`
-        
-                        })
+                tbodyBets += `</tr>`;
+                tableBody.innerHTML = tbodyBets;
 
             
         }
