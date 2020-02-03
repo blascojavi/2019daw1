@@ -4,8 +4,11 @@ export const TEN_BETS = 10;
 export const ONE_BET = 1 ; 
 
 export const tableBody  = document.getElementById("tableBody");
+export const ticketWinner  = document.getElementById("ticketWinner");
+export const results  = document.getElementById("results");
 export const btnAutoPressed = document.getElementById("btnAuto"); 
 export const btnManualPressed = document.getElementById("btnManual"); 
+
 
 export const WIN_LOCAL = 0; 
 export const TIE = 1; 
@@ -14,4 +17,11 @@ export let tenBets = {
         bets: []
     }; 
 export let hitsByBet = []; 
+export let tableResults = {
+        "once": 0, 
+        "doce": 0,
+        "trece": 0,
+        "catorce": 0,
+        "quince": 0,
+}
 

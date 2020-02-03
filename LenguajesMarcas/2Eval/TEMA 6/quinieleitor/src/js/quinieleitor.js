@@ -1,16 +1,17 @@
 import {WIN_LOCAL, TIE, WIN_VISITOR,  tenBets, TOTAL_MATCHS, 
-         btnAutoPressed, btnManualPressed,tableBody,  
-        TEN_BETS, ONE_BET, hitsByBet} from './values.js'; 
+         btnAutoPressed, btnManualPressed,tableBody,ticketWinner, results,
+        TEN_BETS, ONE_BET, hitsByBet, tableResults} from './values.js'; 
 
         window.addEventListener("load" , (e)=>{
                generateTenBets();
                renderBets();
         });
 
-
         btnAutoPressed.addEventListener("click" , ()=>{
-               
             calculateResults(TEN_BETS);
+            renderWinnerTicket(generateAutoWinnerTicket());
+            renderResults(); 
+            
         });
 
         btnManualPressed.addEventListener("click" , ()=>{
@@ -66,22 +67,50 @@ import {WIN_LOCAL, TIE, WIN_VISITOR,  tenBets, TOTAL_MATCHS,
                     hitsByBet[index]=hits;
                 })
             })
+
+            hitsByBet.forEach(value=>{
+                value === 11 ? tableResults.once += 1 : null;
+                value === 12 ? tableResults.doce += 1 : null;
+                value === 13 ? tableResults.trece += 1 : null;
+                value === 14 ? tableResults.catorce += 1 : null;
+                value === 15 ? tableResults.quince += 1 : null;
+                
+            })
         }
 
         const renderBets = ()=>{
+            let renderBets = ''; 
             tenBets.bets.forEach((bets , indexBet)=>{
-                tableBody.innerHTML += 
+                renderBets += 
                     `<tr>
-                        <td>Partido${indexBet+1}</td> </tr> `; 
+                        <td>Partido${indexBet+1}</td>`; 
                         
+                        bets.matches.forEach((match , indexMatch) =>{
+                            renderBets += 
+                            `<td> ${match}</td>`
+                        })
+                       renderBets += `</tr>`
                     })
-            bets.matches.forEach((match , indexMatch) =>{
-                tableBody.innerHTML += 
-                `<td> ${match}</td>`
+            tableBody.innerHTML = renderBets;
+        }
 
-            })
+        const renderWinnerTicket = (winner) =>{
+            let winnerHtml = '<tr>'; 
+            winner.matches.forEach((match , indexMatch)=>{
+                winnerHtml += `<td>Partido${indexMatch+1}</td>`;
+            });
+            winnerHtml += `</tr><tr>` ;
+            winner.matches.forEach((match , indexMatch)=>{
+                winnerHtml += `<td>${match}</td>`;
+            });
+            winnerHtml += `</tr>` ;
+            ticketWinner.innerHTML = winnerHtml;
+        }; 
 
-            
+        const renderResults= ()=>{
+
+            console.log(tableResults);
+
         }
 
         //Generar codigo para crear una quiniela 
@@ -106,3 +135,4 @@ import {WIN_LOCAL, TIE, WIN_VISITOR,  tenBets, TOTAL_MATCHS,
 
 
 
+//INVERTIR PARTIDOS APUESTAS , VER VIDEO 

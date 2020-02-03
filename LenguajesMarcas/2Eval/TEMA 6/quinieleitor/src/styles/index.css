@@ -1,4 +1,12 @@
+*{
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+header{
+    margin: 1em;
+}
 .headTitle{
+    width: 90%;
     text-align: center ;
     font-family: roboto;
     border: 1px solid black;
@@ -6,16 +14,16 @@
     background: lightblue;
     color: whitesmoke;
 }; 
-h2{
-    text-align: center;
+.captionTable{
+    margin: 10px;
+}
+.betsTable{
+    border: 1px solid black; 
+    background: rgba(0, 234, 255, 0.041);
 }
 
-.betsTable {
-    width: 85%;
- }
  th, td {
     color: black;
-    width: 25%;
     text-align: center;
     vertical-align: center;
     border-BOTTOM: 1px solid black;
@@ -23,4 +31,15 @@ h2{
  }
 tr:nth-child(even){
     background: lightgrey;
+}
+
+.generator{
+    display: flex; 
+    margin-top: 1em;
+    padding: 4px; 
+    border: 1px solid black; 
+    border-radius: 5px;
+    width: 90%;
+    text-align: center;
+    background: rgba(0, 234, 255, 0.041);
 }
