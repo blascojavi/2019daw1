@@ -74,8 +74,14 @@ import {WIN_LOCAL, TIE, WIN_VISITOR,  tenBets, TOTAL_MATCHS,
                 value === 13 ? tableResults.trece += 1 : null;
                 value === 14 ? tableResults.catorce += 1 : null;
                 value === 15 ? tableResults.quince += 1 : null;
-                
             })
+            tableResults.totalWinned = (tableResults.once * 10) + 
+                                       (tableResults.doce * 20) + 
+                                       (tableResults.trece * 300) + 
+                                       (tableResults.catorce * 2400) + 
+                                       (tableResults.quince * 120000);
+                                       console.log(tableResults.totalWinned);
+
         }
 
         const renderBets = ()=>{

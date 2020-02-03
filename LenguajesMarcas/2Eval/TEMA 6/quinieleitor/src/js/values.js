@@ -23,5 +23,6 @@ export let tableResults = {
         "trece": 0,
         "catorce": 0,
         "quince": 0,
+        "totalWinned": 0
 }
 
