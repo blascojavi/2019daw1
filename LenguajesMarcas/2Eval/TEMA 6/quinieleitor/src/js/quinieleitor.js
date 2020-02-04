@@ -25,13 +25,10 @@ btnAutoPressed.addEventListener("click", () => {
     calculateResults(TEN_BETS);
     renderWinnerTicket(generateAutoWinnerTicket());
     renderResults();
-
 });
 
 btnManualPressed.addEventListener("click", () => {
     renderManualForm();
-
-
 });
 
 manualForm.addEventListener("submit", (event) => {
@@ -50,9 +47,11 @@ manualForm.addEventListener("submit", (event) => {
         });
         quinielaManual[i] = resultado;
     }
+
     let manualBet = {
         matches: []
     };
+
     Object.values(quinielaManual).forEach((result, match) => {
         manualBet.matches[match] = parseInt(result);
     })
@@ -67,7 +66,6 @@ const ramdomDices = () => {
     const MIN = 1;
     const MAX = 10;
     return Math.floor(Math.random() * (MAX - MIN) + MIN);
-
 };
 
 const generateQuiniela = () => {
@@ -75,6 +73,7 @@ const generateQuiniela = () => {
     let quiniela = {
         matches: []
     };
+
     for (match; match <= TOTAL_MATCHS; match++) {
         let winerValue = ramdomDices();
         if (winerValue <= 5) {
@@ -106,7 +105,6 @@ const calculateResults = (numOfBets) => {
         bet.matches.forEach((betMatch, indexMach) => {
             if (winnerTicket.matches[indexMach] === betMatch) {
                 hits++
-
             }
             hitsByBet[index] = hits;
         })
@@ -119,17 +117,15 @@ const calculateResults = (numOfBets) => {
         value === 14 ? tableResults.catorce += 1 : null;
         value === 15 ? tableResults.quince += 1 : null;
     })
+
     tableResults.totalWinned = (tableResults.once * 10) +
         (tableResults.doce * 20) +
         (tableResults.trece * 300) +
         (tableResults.catorce * 2400) +
         (tableResults.quince * 120000);
-    console.log(tableResults.totalWinned);
-
 }
 
 const renderBets = () => {
-    console.log(tenBets);
     let renderBets = '';
     tenBets.bets.forEach((bets, indexBet) => {
         renderBets +=
@@ -197,26 +193,5 @@ const renderManualForm = () => {
                 </fieldset>`
     }
     inputsManual += `<input type="submit" value="APOSTAR" class=btnApostar> </form>`
-
     manualForm.innerHTML = inputsManual;
 }
-
-//Generar codigo para crear una quiniela 
-///Para generar por cada partido tirar dados 
-//de 1-5 gana LOcal
-//de 6-8 EMPATE
-//de 9-10 Visitante
-
-//Generar 10 quinielas y guardar en TENBETS
-
-//Si AUTOMATICO : 
-
-///generar una quiniela GANADORA auto y guarda en winTicket
-
-///Comparar win con cada una de las 10 ApuestasRandom y calcular ganacias 
-
-
-//SI MAANUAL : 
-///Recoge datos del usuario y guarda en winManualTicket
-///Comparar win con manual y calcular ganancias 
-
