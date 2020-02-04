@@ -1,20 +1,31 @@
-import {
-    WIN_LOCAL,
-    TIE,
-    WIN_VISITOR,
-    tenBets,
-    TOTAL_MATCHS,
-    btnAutoPressed,
-    btnManualPressed,
-    tableBody,
-    ticketWinner,
-    results,
-    TEN_BETS,
-    ELEVEN_BETS,
-    hitsByBet,
-    tableResults,
-    manualForm
-} from './values.js';
+ const TOTAL_MATCHS = 14; 
+ const LOCAL_DICES = 5; 
+ const TEN_BETS = 10; 
+ const ELEVEN_BETS= 11 ; 
+
+ const tableBody  = document.getElementById("tableBody");
+ const ticketWinner  = document.getElementById("ticketWinner");
+ const manualForm  = document.getElementById("manualForm");
+ const results  = document.getElementById("results");
+ const btnAutoPressed = document.getElementById("btnAuto"); 
+ const btnManualPressed = document.getElementById("btnManual"); 
+
+
+ const WIN_LOCAL = 0; 
+ const TIE = 1; 
+ const WIN_VISITOR = 2; 
+let tenBets = {
+        bets: []
+    }; 
+let hitsByBet = []; 
+let tableResults = {
+        "once": 0, 
+        "doce": 0,
+        "trece": 0,
+        "catorce": 0,
+        "quince": 0,
+        "totalWinned": 0
+}
 
 window.addEventListener("load", (e) => {
     generateTenBets();
