@@ -6,7 +6,6 @@ export const ELEVEN_BETS= 11 ;
 export const tableBody  = document.getElementById("tableBody");
 export const ticketWinner  = document.getElementById("ticketWinner");
 export const manualForm  = document.getElementById("manualForm");
-export const tableManualEleven = document.getElementById("tableEleven");
 export const results  = document.getElementById("results");
 export const btnAutoPressed = document.getElementById("btnAuto"); 
 export const btnManualPressed = document.getElementById("btnManual"); 

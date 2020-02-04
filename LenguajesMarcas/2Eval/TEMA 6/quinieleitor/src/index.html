@@ -1,42 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <head>
         <meta charset="UTF-8">
         <title>Quinieleitor Main Page </title>
         <meta name="author" content="Antonio Ferrer">
         <meta name="viewport" content="width=device-width, user-scalable=no">
         <link href="https://fonts.googleapis.com/css?family=Roboto:900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Sigmar+One&display=swap" rel="stylesheet">
         <link href="./styles/styles.css" rel="stylesheet">
         <script type="module" src="js/quinieleitor.js"></script>
-    
+
     </head>
 </head>
+
 <body>
     <header>
         <h1>QUINIELEITOR</h1>
     </header>
     <main class="flex">
-        <aside class="menu generator"> 
-            <h2>Menu Principal</h2> 
+        <aside class="menu generator">
+            <h2>Menú Principal</h2>
             <button id="btnAuto">AUTOMATICA</button>
             <button id="btnManual">MANUAL</button>
         </aside>
-            <table class="tableWinner">
-                <caption><h2> Combinación ganadora</h2></caption>
-                <tbody id="ticketWinner">
-                </tbody>
-            </table>    
-        <aside class="premios flex"> 
-            <table id="results">
+        <table class="tableWinner">
+            <caption>
+                <h2> Combinación ganadora</h2>
+            </caption>
+            <tbody id="ticketWinner">
+            </tbody>
+        </table>
+        <aside class="premios flex">
+            <table id="results" class="results">
             </table>
         </aside>
     </main>
-    <section class="manual" id="manualForm">
-    </section>
-    <section class="apuestas"> 
+    <div class="manualContainer">
+        <section class="manual" id="manualForm">
+        </section>
+    </div>
+    <section class="apuestas">
         <table class="betsTable">
-            <caption class ="captionTable"><h2>Estas son sus diez quinielas automáticas</h2></caption>
+            <caption class="captionTable">
+                <h2>Estas son sus diez quinielas automáticas</h2>
+            </caption>
             <thead>
                 <td>PARTIDOS</td>
                 <td>PARTIDO1</td>
@@ -57,14 +67,14 @@
             </thead>
             <tbody id="tableBody">
             </tbody>
-        </table> 
+        </table>
 
     </section>
-           
-    <table id="tableEleven">
 
+    <table>
 
     </table>
 
 </body>
+
 </html>

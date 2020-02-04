@@ -3,24 +3,36 @@ html{
     margin: 0 auto;
 
 }
+body{
+    display: flex; 
+    justify-content: center;
+    flex-wrap: wrap;
+    background: linear-gradient(to bottom , white,  rgba(9, 255, 103, 0.082));
+}
 
 header{
     display: flex;
-    width: 90% ;
+    width: 60% ;
     justify-content: center;
     border: 1px solid black;
-    border-radius: 10%; 
-    background: linear-gradient(to bottom , white,  rgba(3, 214, 214, 0.404));
+    border-radius: 50%; 
+    background: linear-gradient(to bottom , white,  rgba(9, 255, 103, 0.288));
     box-shadow: 0.2em 0.1em 0.4em grey;
 }
+    header h1{
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.9em;
+        letter-spacing: 40px;
+        -webkit-text-stroke: 2px black;
+        color: white;
+    }
+    
 .headTitle{
     width: 90%;
     text-align: center ;
-    font-family: roboto;
     border: 1px solid black;
     border-radius: 10px;
     background: lightblue;
-    color: whitesmoke;
     letter-spacing: 12rem;
 }
 
@@ -28,50 +40,75 @@ main{
     margin-top: 1em;
     display: flex;
     width: 90%;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 
     .menu{
-        width: 20%; 
+        width: 45%; 
         height: 10rem;
         display: flex;
         justify-content: space-around;
         align-items: center;
-        border: 2px solid black;
+        border: 0px solid black;
         border-radius: 10%;
-        background: linear-gradient(to bottom , white,  rgb(221, 236, 236));
+        background: linear-gradient(to bottom , white,  rgba(9, 255, 103, 0.288));
         box-shadow: 0.2em 0.1em 0.4em grey;
-        margin : 5px;
-        padding : 5px;
         flex-wrap: wrap;
+        margin: 1em;
+
 
     }
     
     .menu h2{
         text-align: center;
         width: 100%;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.9em;
+        -webkit-text-stroke: 2px black;
+        color: white;
     }
      button{
         width: 40%;
-        height: 30%;
+        height: 20%;
         border-radius: 50%;
         box-shadow: 0.3em 0.2em  black;
         background: white;
 
      }
     .tableWinner{
-        margin: 2rem;
-        width: 40%; 
+        margin: 0.0rem;
+        width: 20%; 
+        padding-left: 0.2em;
+        padding-right: 2.5em;
+    }
+    .tableWinner tr td{
+        padding : 0.3rem;
+        border:1px solid black;
+     
+    }
+
+    .results tr:nth-child(odd){
+        background-color: rgb(152, 250, 160);
+    }
+
+    .totalWinned{
+        font-family: 'Sigmar One', cursive;
+        color: red;
+
+    }
+    .moneyWinned{
+       font-weight: bold;
     }
     .premios{
         display: flex; 
         justify-content: center;
-        padding: 0.5em;
-        width: 30%;
-        border: 1px solid black;
-        border-radius: 30%;
-        background: linear-gradient(to bottom , white,  rgb(221, 236, 236));
+        padding-left: 0.1em;
+        width: 50%;
+        border: 0px solid black;
+        border-radius: 20%;
+        background: linear-gradient(to bottom , white,  rgba(9, 255, 103, 0.11));
         box-shadow: 0.2em 0.1em 0.4em grey;
+        font-size: 0.8em;
     }  
 
     .premios table{
@@ -98,7 +135,7 @@ main{
     justify-content: center;
     border: 1px solid black; 
     border-radius: 5%;
-    background: linear-gradient(to bottom , white,  lightblue);
+    background: linear-gradient(to bottom , white,  rgba(9, 255, 103, 0.288));
     box-shadow: 0.2em 0.1em 0.4em grey;
 }
 .apuestas table{
@@ -119,6 +156,30 @@ main{
     border-bottom: 1px solid black;
     border-collapse: collapse;
  }
-tr:nth-child(even){
+ .betsTable tr:nth-child(even){
     background: lightgrey;
+}
+.manualContainer{
+    width: 90%;
+    display: flex; 
+    justify-content: center;
+    margin-left: 10rem;
+  
+}
+.formManual{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 80%;
+    background: linear-gradient(to bottom , white,  rgba(9, 255, 103, 0.288));
+    box-shadow: 0.2em 0.1em 0.4em grey;
+
+}
+.btnApostar{
+    margin-left: 2rem;
+    margin-top: 1.3rem;
+    width: 12em; 
+    height: 2rem;
+    font-weight: bold;
 }
