@@ -1,0 +1,124 @@
+html{
+    box-sizing: border-box;
+    margin: 0 auto;
+
+}
+
+header{
+    display: flex;
+    width: 90% ;
+    justify-content: center;
+    border: 1px solid black;
+    border-radius: 10%; 
+    background: linear-gradient(to bottom , white,  rgba(3, 214, 214, 0.404));
+    box-shadow: 0.2em 0.1em 0.4em grey;
+}
+.headTitle{
+    width: 90%;
+    text-align: center ;
+    font-family: roboto;
+    border: 1px solid black;
+    border-radius: 10px;
+    background: lightblue;
+    color: whitesmoke;
+    letter-spacing: 12rem;
+}
+
+main{
+    margin-top: 1em;
+    display: flex;
+    width: 90%;
+    justify-content: space-around;
+}
+
+    .menu{
+        width: 20%; 
+        height: 10rem;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border: 2px solid black;
+        border-radius: 10%;
+        background: linear-gradient(to bottom , white,  rgb(221, 236, 236));
+        box-shadow: 0.2em 0.1em 0.4em grey;
+        margin : 5px;
+        padding : 5px;
+        flex-wrap: wrap;
+
+    }
+    
+    .menu h2{
+        text-align: center;
+        width: 100%;
+    }
+     button{
+        width: 40%;
+        height: 30%;
+        border-radius: 50%;
+        box-shadow: 0.3em 0.2em  black;
+        background: white;
+
+     }
+    .tableWinner{
+        margin: 2rem;
+        width: 40%; 
+    }
+    .premios{
+        display: flex; 
+        justify-content: center;
+        padding: 0.5em;
+        width: 30%;
+        border: 1px solid black;
+        border-radius: 30%;
+        background: linear-gradient(to bottom , white,  rgb(221, 236, 236));
+        box-shadow: 0.2em 0.1em 0.4em grey;
+    }  
+
+    .premios table{
+        width: 80%;
+        margin: 1em; 
+        border: 1px solid black; 
+        border-collapse: collapse;
+        font-size: 1.5em;
+    }
+
+    .formManual{
+        display: flex;
+        margin: 2em;
+        padding: 2em;
+        width: 90%;
+        border: 1px solid black;
+    }
+    
+.apuestas{
+    display: flex;
+    margin-top: 1em;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    border: 1px solid black; 
+    border-radius: 5%;
+    background: linear-gradient(to bottom , white,  lightblue);
+    box-shadow: 0.2em 0.1em 0.4em grey;
+}
+.apuestas table{
+    margin-bottom: 2rem;
+    padding: 1%;
+    border-radius: 2%;
+}
+
+.betsTable{
+    border: 1px solid black; 
+    background: rgba(0, 234, 255, 0.041);
+}
+
+ th, td {
+    color: black;
+    text-align: center;
+    vertical-align: center;
+    border-bottom: 1px solid black;
+    border-collapse: collapse;
+ }
+tr:nth-child(even){
+    background: lightgrey;
+}

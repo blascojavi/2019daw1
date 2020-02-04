@@ -1,64 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <title>Quinieleitor Main Page </title>
-    <meta name="author" content="Antonio Ferrer">
-    <meta name="viewport" content="width=device-width, user-scalable=no">
-    <link href="https://fonts.googleapis.com/css?family=Roboto:900&display=swap" rel="stylesheet">
-    <link href="./styles/index.css" rel="stylesheet">
-    <script type="module" src="js/quinieleitor.js"></script>
-
+    <head>
+        <meta charset="UTF-8">
+        <title>Quinieleitor Main Page </title>
+        <meta name="author" content="Antonio Ferrer">
+        <meta name="viewport" content="width=device-width, user-scalable=no">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:900&display=swap" rel="stylesheet">
+        <link href="./styles/styles.css" rel="stylesheet">
+        <script type="module" src="js/quinieleitor.js"></script>
+    
+    </head>
 </head>
-
 <body>
     <header>
-        <h1 class="headTitle">QUINIELEITOR</h1>
+        <h1>QUINIELEITOR</h1>
     </header>
-   
-    <table class="betsTable">
-        <caption class ="captionTable"><h2>Estas son sus diez quinielas automáticas</h2></caption>
-        <thead>
-            <td>APUESTAS</td>
-            <td>APUESTA1</td>
-            <td>APUESTA2</td>
-            <td>APUESTA3</td>
-            <td>APUESTA4</td>
-            <td>APUESTA5</td>
-            <td>APUESTA6</td>
-            <td>APUESTA7</td>
-            <td>APUESTA8</td>
-            <td>APUESTA9</td>
-            <td>APUESTA10</td>
-            <td>APUESTA11</td>
-            <td>APUESTA12</td>
-            <td>APUESTA13</td>
-            <td>APUESTA14</td>
-            <td>APUESTA15</td>
-        </thead>
-        <tbody id="tableBody">
-        </tbody>
-    </table>
-    <section class="generator">
-        <h2>Generador de apuesta deportiva</h2>
-        <button id="btnAuto">Generar automaticamente</button>
-        <button id="btnManual">Quiniela Manual</button>
+    <main class="flex">
+        <aside class="menu generator"> 
+            <h2>Menu Principal</h2> 
+            <button id="btnAuto">AUTOMATICA</button>
+            <button id="btnManual">MANUAL</button>
+        </aside>
+            <table class="tableWinner">
+                <caption><h2> Combinación ganadora</h2></caption>
+                <tbody id="ticketWinner">
+                </tbody>
+            </table>    
+        <aside class="premios flex"> 
+            <table id="results">
+            </table>
+        </aside>
+    </main>
+    <section class="manual" id="manualForm">
     </section>
-
-    <section class="winner">
-        <table class="tableWinner">
-            <caption><h2>Esta es la combinación ganadora</h2></caption>
-            <tbody id="ticketWinner">
+    <section class="apuestas"> 
+        <table class="betsTable">
+            <caption class ="captionTable"><h2>Estas son sus diez quinielas automáticas</h2></caption>
+            <thead>
+                <td>PARTIDOS</td>
+                <td>PARTIDO1</td>
+                <td>PARTIDO2</td>
+                <td>PARTIDO3</td>
+                <td>PARTIDO4</td>
+                <td>PARTIDO5</td>
+                <td>PARTIDO6</td>
+                <td>PARTIDO7</td>
+                <td>PARTIDO8</td>
+                <td>PARTIDO9</td>
+                <td>PARTIDO10</td>
+                <td>PARTIDO11</td>
+                <td>PARTIDO12</td>
+                <td>PARTIDO13</td>
+                <td>PARTIDO14</td>
+                <td>PARTIDO15</td>
+            </thead>
+            <tbody id="tableBody">
             </tbody>
-        </table>
-    </section>
+        </table> 
 
-    <section class="">
-        <table id="results">
-            
-        </table>
     </section>
+           
+    <table id="tableEleven">
+
+
+    </table>
+
 </body>
-
 </html>

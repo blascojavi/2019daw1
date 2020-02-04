@@ -1,10 +1,12 @@
 export const TOTAL_MATCHS = 14; 
 export const LOCAL_DICES = 5; 
 export const TEN_BETS = 10; 
-export const ONE_BET = 1 ; 
+export const ELEVEN_BETS= 11 ; 
 
 export const tableBody  = document.getElementById("tableBody");
 export const ticketWinner  = document.getElementById("ticketWinner");
+export const manualForm  = document.getElementById("manualForm");
+export const tableManualEleven = document.getElementById("tableEleven");
 export const results  = document.getElementById("results");
 export const btnAutoPressed = document.getElementById("btnAuto"); 
 export const btnManualPressed = document.getElementById("btnManual"); 

@@ -1,6 +1,6 @@
 import {WIN_LOCAL, TIE, WIN_VISITOR,  tenBets, TOTAL_MATCHS, 
          btnAutoPressed, btnManualPressed,tableBody,ticketWinner, results,
-        TEN_BETS, ONE_BET, hitsByBet, tableResults} from './values.js'; 
+        TEN_BETS, ELEVEN_BETS, hitsByBet, tableResults, tableManualEleven, manualForm} from './values.js'; 
 
         window.addEventListener("load" , (e)=>{
                generateTenBets();
@@ -15,11 +15,41 @@ import {WIN_LOCAL, TIE, WIN_VISITOR,  tenBets, TOTAL_MATCHS,
         });
 
         btnManualPressed.addEventListener("click" , ()=>{
-            console.log("hiii MANUAL pressed");
-            calculateResults(ONE_BET);
+            renderManualForm();
 
         
         });
+
+        manualForm.addEventListener("submit" , (event)=>{
+            event.preventDefault();
+            let quinielaManual = {};
+            let resultado ; 
+            let i = 1 ; 
+
+            for(i ; i<=15 ; i++){
+                let partido = document.getElementsByName(`partido${i}`); 
+                partido.forEach((radio ,index) => {
+                    console.log(radio.checked);
+                    if(radio.checked){
+                        resultado = radio.value;        
+                    }
+                });
+                quinielaManual[i] = resultado;
+            }
+            let manualBet = {matches : []}; 
+            Object.values(quinielaManual).forEach((result , match) =>{
+                manualBet.matches[match] = result;
+            })
+
+            console.log(manualBet);
+           tenBets.bets[10]= manualBet;
+           renderBets();
+           renderWinnerTicket(generateAutoWinnerTicket());
+           calculateResults(ELEVEN_BETS);
+           renderResults(); 
+        })
+
+      
 
         const ramdomDices = ()=>{
             const MIN = 1 ; 
@@ -89,11 +119,16 @@ import {WIN_LOCAL, TIE, WIN_VISITOR,  tenBets, TOTAL_MATCHS,
             tenBets.bets.forEach((bets , indexBet)=>{
                 renderBets += 
                     `<tr>
-                        <td>Partido${indexBet+1}</td>`; 
+                        <td>Apuesta${indexBet+1}</td>`; 
                         
                         bets.matches.forEach((match , indexMatch) =>{
-                            renderBets += 
+                            if(match === 0 ){
+                                renderBets += 
+                                `<td> X </td>`
+                            }else{
+                                renderBets += 
                             `<td> ${match}</td>`
+                            }
                         })
                        renderBets += `</tr>`
                     })
@@ -114,9 +149,43 @@ import {WIN_LOCAL, TIE, WIN_VISITOR,  tenBets, TOTAL_MATCHS,
         }; 
 
         const renderResults= ()=>{
+           let resultTable =  `<tr>
+                                    <td>11 aciertos</td> <td> ${tableResults.once}</td>
+                                </tr>
+                                <tr>
+                                    <td>12 aciertos</td> <td> ${tableResults.doce}</td>
+                                </tr>
+                                <tr>
+                                    <td>13 aciertos</td> <td> ${tableResults.trece}</td>
+                                </tr>
+                                <tr>
+                                    <td>14 aciertos</td> <td> ${tableResults.catorce}</td>
+                                </tr>
+                                <tr>
+                                    <td>15 aciertos</td> <td> ${tableResults.quince}</td>
+                                </tr>
+                                <tr>
+                                    <td>TOTAL GANADO</td> <td> ${tableResults.totalWinned}</td>
+                                </tr>`
 
-            console.log(tableResults);
+            results.innerHTML = resultTable;
 
+        }
+
+        const renderManualForm = ()=>{
+            let i = 1 ; 
+            let inputsManual = `<form type="submit" class=formManual>`
+            for(i ; i <= 15 ; i++){
+               inputsManual += `<fieldset>
+                <legend>Partido ${i}</legend>
+                    <input type="radio" name="partido${i}" value=1>1 
+                    <input type="radio" name="partido${i}" value=0 checked>X 
+                    <input type="radio" name="partido${i}" value=2>2 
+                </fieldset>`
+            }
+            inputsManual += `<input type="submit" value="APOSTAR"> </form>`
+
+            manualForm.innerHTML = inputsManual;
         }
 
         //Generar codigo para crear una quiniela 
@@ -141,4 +210,4 @@ import {WIN_LOCAL, TIE, WIN_VISITOR,  tenBets, TOTAL_MATCHS,
 
 
 
-//INVERTIR PARTIDOS APUESTAS , VER VIDEO 
+//CAMBIAR LOS 0 POR x 
