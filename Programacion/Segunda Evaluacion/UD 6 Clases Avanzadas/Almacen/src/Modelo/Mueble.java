@@ -1,7 +1,9 @@
 package Modelo;
 
+import javax.swing.text.DateFormatter;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Mueble extends Producto {
 
@@ -11,7 +13,7 @@ public class Mueble extends Producto {
         PINO, ROBLE, HAYA
     };
 
-    private Date anyoFab;
+    private LocalDate anyoFab;
     private Madera tipoMadera;
     private String estilo;
     private double precio ;
@@ -44,11 +46,12 @@ public class Mueble extends Producto {
        }
     }
 
-    public Date getAnyoFab() {
-        return anyoFab;
+    public String getAnyoFab() {
+        String anyoFabFormateado =  anyoFab.format(DateTimeFormatter.ofPattern("dd/MMM/yy"));
+        return anyoFabFormateado;
     }
 
-    public void setAnyoFab(Date anyoFab) {
+    public void setAnyoFab(LocalDate anyoFab) {
         this.anyoFab = anyoFab;
     }
 

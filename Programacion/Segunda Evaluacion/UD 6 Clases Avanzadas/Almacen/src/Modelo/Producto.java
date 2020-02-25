@@ -4,8 +4,6 @@ package Modelo;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
 public abstract  class Producto {
     protected int id;
     protected String nombre;

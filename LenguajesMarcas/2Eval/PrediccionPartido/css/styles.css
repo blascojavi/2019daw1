@@ -1,0 +1,48 @@
+html{
+    border: 0 auto; 
+
+}
+body{
+    display: flex; 
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+h1{
+    text-align: center;
+    width: 100%;
+}
+a:link{
+    text-decoration: none;
+    color: lightblue;
+}
+a:active {
+    color: grey; 
+    border: 1px maroon solid;
+}
+
+a:focus{
+    background: mediumaquamarine;
+}
+
+table , tr,td{
+    width: 30%;
+    padding : 0em 1em 0em 1em;
+    text-align: center;
+    font-size: 1.5rem;;
+    border: 2px solid black; 
+    border-collapse: collapse;
+}
+
+thead tr{
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+thead td:hover{
+    background: rgb(158, 184, 255);
+}
+
+thead td:nth-child(2):hover{
+    background:rgb(169, 222, 255);
+}

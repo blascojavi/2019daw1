@@ -65,10 +65,12 @@ public class NegociosService {
             }
 
             Venta v = datosVenta(clienteVenta, productoVenta);
+            v.setVendedor(nv);
             ventas.add(v);
 
             clienteVenta.getCompras().add(v);
             productoVenta.getVentas().add(v);
+
 
         } catch (Exception e) {
             throw new RuntimeException("No ha sido posible introducir la venta" + e.getMessage());
@@ -87,10 +89,9 @@ public class NegociosService {
     }
 
     public String buscarProducto(int np) throws Exception {
-   
 
             Producto producto = null;
-            for (int i = 0; i < productos.size() ; i++) {
+            for (int i = 0; i < productos.size() && producto == null ; i++) {
                 if (productos.get(i).getId() == np) {
                     producto = productos.get(i);
                 }
@@ -126,7 +127,7 @@ public class NegociosService {
             if (venta == null) {
                 throw new Exception("La venta con id: " + nv + " no existe");
             }
-            venta.imprimirVenta();
+            System.out.println(venta.imprimirVenta());
         } catch (Exception e) {
            throw new RuntimeException("No ha sido posible imprimir la venta" + e.getMessage());
         }

@@ -8,12 +8,14 @@ import Modelo.Particular;
 import Modelo.Producto;
 import Modelo.Televisor;
 import Modelo.TipoMayorista;
+
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
+
 import java.time.LocalDate;
-import java.time.LocalDateTime;
+
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
+import java.time.format.DateTimeParseException;
+
 import java.util.Scanner;
 
 
@@ -144,7 +146,12 @@ public class MenuPrincipal {
         m.setEstilo(sc.nextLine());
 
         System.out.println("Introduzca la fecha (dd/MM/yyyy): ");
+       try{
         m.setAnyoFab(this.validarFecha(sc.nextLine()));
+       }catch(FormatoFechaErroneo e ){
+           System.out.println(e);
+           m.setAnyoFab(null);
+        }
 
         return m;
 
@@ -153,6 +160,12 @@ public class MenuPrincipal {
     public Lavadora pedirLavadora() {
         Scanner sc = new Scanner(System.in);
         Lavadora l = new Lavadora();
+
+        System.out.println("Introduzca fabricante : ");
+        l.setFabricante(sc.nextLine());
+
+        System.out.println("Introduzca marca : ");
+        l.setMarca(sc.nextLine());
 
         System.out.println("Introduzca las revoluciones(rpm): ");
         int rev = Integer.parseInt(sc.nextLine());
@@ -168,6 +181,12 @@ public class MenuPrincipal {
     public Televisor pedirTelevisor() {
         Televisor tv = new Televisor();
         Scanner sc = new Scanner(System.in);
+
+        System.out.println("Introduzca fabricante : ");
+        tv.setFabricante(sc.nextLine());
+
+        System.out.println("Introduzca marca : ");
+        tv.setMarca(sc.nextLine());
 
         System.out.println("Introduzca las pulgadas: ");
         double pulgadas = Double.parseDouble(sc.nextLine());
@@ -266,18 +285,18 @@ public class MenuPrincipal {
                 System.out.println("2. Particular.");
                 opcion = sc.next();
 
+                if (opcion.equals("1")) {
+                    c = pedirMayorista();
+                    c.setNombre(nombre);
+                    c.setRazonSocial(rz);
+                }
+                if (opcion.equals("2")) {
+                    c = pedirParticular();
+                    c.setNombre(nombre);
+                    c.setRazonSocial(rz);
+                }
             } while (!opcion.equals("1") && !opcion.equals("2"));
 
-            if (!opcion.equals("1")) {
-                c = pedirMayorista();
-                c.setNombre(nombre);
-                c.setRazonSocial(rz);
-            }
-            if (!opcion.equals("2")) {
-                c = pedirParticular();
-                c.setNombre(nombre);
-                c.setRazonSocial(rz);
-            }
         } catch (Exception e) {
             System.out.println("ERROR AL INTRODUCIR EL CLIENTE" + e.getMessage());
         }
@@ -363,12 +382,12 @@ public class MenuPrincipal {
 
                 if (opcionVentas.equals("1")) {
                     System.out.println("Introduce el número de cliente.");
-                    int nv = Integer.parseInt(sc.nextLine());
+                    int nc = Integer.parseInt(sc.nextLine());
                     System.out.println("Introduce el número de producto.");
                     int np = Integer.parseInt(sc.nextLine());
                     System.out.println("Introduce el nombre del vendedor: ");
                     String v = sc.nextLine();
-                    servicio.introducirVenta(nv, np, v);
+                    servicio.introducirVenta(nc, np, v);
                 }
                 if (opcionVentas.equals("2")) {
                     System.out.println("Introduzca número de venta: ");
@@ -393,23 +412,15 @@ public class MenuPrincipal {
 
     }
 
-    private LocalDate validarFecha(String fecha) throws ParseException { //TODO: validacion de fecha
-       LocalDate fec = LocalDate.of(fecha);
-        fec.format(DateTimeFormatter.ofPattern("DD-MM-YY"));
-        // SimpleDateFormat sdf;
-        fec.
+    private LocalDate validarFecha(String fecha)  { //TODO: validacion de fecha
+        DateTimeFormatter patronFecha = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        LocalDate fec ;
+        try{
+                fec = LocalDate.parse(fecha , patronFecha);
+        }catch(DateTimeParseException e){
+            throw new FormatoFechaErroneo(fecha + " dd-MMMM-yy");
 
-       // sdf = new SimpleDateFormat("dd/MM/yyyy");
-
-      //  Date fec = null;
-
-//        try {
-       // fec = sdf.parse(fecha);
-
-//        } catch (ParseException e) {
-//            System.out.println("Formato de fecha no valido" + e);
-//            throw new Exception(e);
-//        }
+        }
         return fec;
     }
 
