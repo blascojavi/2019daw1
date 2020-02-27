@@ -4,4 +4,6 @@
 
 /* 21 - SELECT nombre FROM ciclista ORDER BY edad  LIMIT 1 ; */
 
+/* 22 - SELECT nombre FROM ciclista , etapa WHERE ciclista.dorsal = etapa.dorsal ORDER BY edad LIMIT 1; */
 
+/* 23 - SELECT  nombre , nompuerto from ciclista , puerto WHERE  ciclista.dorsal = puerto.dorsal GROUP BY nombre HAVING COUNT(nombre) >= 2  ; */
