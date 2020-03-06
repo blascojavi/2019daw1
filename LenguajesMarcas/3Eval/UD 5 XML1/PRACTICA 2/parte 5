@@ -1,0 +1,84 @@
+﻿<?xml version = "1.0" encoding="UTF-8"?>
+<facturas>
+    <factura numero="999">
+      <EmpresaEmisora cif="Q-9876543">
+       <RazonSocial>Equipos Digitales S.l</RazonSocial>
+       <direccion>
+          <via tipo="avenida">Valladolid</via>
+          <portal></portal>
+          <puerta></puerta>
+          <escalera></escalera>
+          <localidad></localidad>
+          <codigoPostal>28015</codigoPostal>
+       </direccion>
+       <contacto>
+         <telefono>917776688</telefono>
+         <fax>917776699</fax>       
+       </contacto>
+      </EmpresaEmisora>
+      <cliente numero="897">
+      <DatosPedido>
+      <datosFactura>
+        <Productos>
+          <producto linea="1">
+            <referencia>MII93000F/8</referencia>
+            <descripcion>Micro Pentium IV 3000MHZ FB800</descripcion>
+            <cantidad>1</cantidad>
+            <precio moneda="euro">230</precio>
+            <iva>16.0</iva>
+            <importe>266.80</importe>
+         </producto>
+          <producto linea="2">
+            <referencia>MB8QDIP4</referencia>
+            <descripcion>Placa base QDI P4 </descripcion>
+            <cantidad>1</cantidad>
+            <precio moneda="euro">180</precio>
+            <iva>16.0</iva>
+            <importe>208.80</importe>
+         </producto>
+          <producto linea="3">
+            <referencia>MEDD512M32</referencia>
+            <descripcion>DIMM DDR 512MB 3200</descripcion>
+            <cantidad>2</cantidad>
+            <precio moneda="euro">40</precio>
+            <iva>16.0</iva>
+            <importe>92.80</importe>
+         </producto>
+          <producto linea="4">
+            <referencia>HD250GSA7</referencia>
+            <descripcion>Disco duro 250GB S-ATA 7200</descripcion>
+            <cantidad>4</cantidad>
+            <precio moneda="euro">120</precio>
+            <iva>16.0</iva>
+            <importe>556.80</importe>
+         </producto>
+        </Productos>
+        <TotalFactura>
+          <baseImponible moneda="euro">970</baseImponible>
+          <porcentajeIVA>16</porcentajeIVA>
+          <CuotaIVA moneda="euro">155.20</CuotaIVA>
+          <total moneda="euro">1125.20</total>
+        </TotalFactura>
+      </datosFactura>
+        <fecha>12-01-2005</fecha>
+        <NumPedido>731</NumPedido>
+        <pago forma="efectivo"/>
+      </DatosPedido>
+       <RazonSocial>Dari&apos;o bueno gutie&apos;rrez</RazonSocial>
+       <direccionEnvio>
+          <via tipo="avenida">Oporto</via>
+          <portal>7</portal>
+          <puerta>4</puerta>
+          <escalera>D</escalera>
+          <localidad>Madrid</localidad>
+          <codigoPostal>28043</codigoPostal>
+       </direccionEnvio>
+       <contacto>
+         <telefono></telefono>
+         <fax></fax>
+       </contacto>
+      </cliente>
+      
+      
+    </factura>
+</facturas>
