@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="314.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLER.imc">
+   <children>
+      <AnchorPane layoutX="-1.0" prefHeight="308.0" prefWidth="600.0">
+         <children>
+            <Slider fx:id="sldWeight" layoutX="153.0" layoutY="42.0" onMouseClicked="#weightChanged" prefHeight="14.0" prefWidth="425.0" />
+            <Slider fx:id="sldHeight" blockIncrement="5.0" layoutX="153.0" layoutY="97.0" max="220.0" min="40.0" onMouseClicked="#heightChanged" prefHeight="14.0" prefWidth="425.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="40.0" />
+            <Label layoutX="27.0" layoutY="41.0" text="Peso : " />
+            <Label fx:id="lblWeight" layoutX="82.0" layoutY="41.0" text="Peso : " />
+            <Label layoutX="24.0" layoutY="96.0" text="Altura : " />
+            <Label fx:id="lblHeight" layoutX="79.0" layoutY="96.0" text="Altura : " />
+            <Label fx:id="lblResult" layoutX="79.0" layoutY="211.0" style="-fx-font-size: 20; -fx-text-fill: violet;" text="Su IMC es: " />
+            <ListView fx:id="listResults" layoutX="350.0" layoutY="162.0" prefHeight="132.0" prefWidth="200.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

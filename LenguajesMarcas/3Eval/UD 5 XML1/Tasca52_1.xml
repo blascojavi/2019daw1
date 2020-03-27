@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<?xml-stylesheet type="text/css" href="tasca52_1.css" ?>
+<professor>
+  <departament>Departament d'Informàtica</departament>
+  <nom>Agustin</nom>
+  <cognom>Gil Benages</cognom>
+  <carrecs>
+    <carrec>Tutor 1rSDAM</carrec>
+    <carrec>Supervisor de pràctiques</carrec>
+    <carrec>Cap de cicle</carrec>
+  </carrecs>
+</professor>
