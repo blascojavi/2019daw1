@@ -1,0 +1,54 @@
+html{
+    margin : 0 auto ;
+    box-sizing: border-box;
+}
+.header{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background: #6C6C6B;
+    border-bottom: 2px solid black;
+}
+
+.header h1{
+    font-family: "Dank Mono" , "Roboto Thin" , "Fira Code";
+    font-size: 4em;
+    margin : 0px;
+    padding: 0px;
+}
+
+.header h2{
+    margin : 0px;
+    padding: 0px;
+    font-size: 2em;
+    font-family: "Dank Mono" , "Roboto Thin" , "Fira Code";
+    text-align: center;
+    width: 100%;
+}
+
+body{
+    background: #A5A1A7;
+}
+section{
+    display: flex;
+    justify-content: center;
+    font-size: 1.5em;
+
+}
+.change-color{
+    padding: 0 20px 0 20px;
+    border: 1px solid grey;
+    animation-name: animation-change;
+    animation-iteration-count: infinite;
+}
+
+@keyframes animation-change {
+         0%{background: aquamarine}
+        25%{background: blue}
+        50%{background: darkred}
+        75%{background: green}
+        100%{background: yellow}
+}
+
