@@ -1,0 +1,20 @@
+<!ELEMENT cartelera (película*)>
+  <!ELEMENT película (título,título_original?,nacionalidad?,género,(sin_clasificar | clasificación),sinopsis,director,reparto,web?,cartel?)>
+  <!ATTLIST película código NMTOKEN #REQUIRED duración NMTOKEN #REQUIRED año NMTOKEN "2003" >
+  <!ELEMENT título (#PCDATA) >
+  <!ELEMENT título_original (#PCDATA) >
+  <!ELEMENT nacionalidad (#PCDATA) >
+  <!ELEMENT género (#PCDATA) >
+  <!ELEMENT sin_clasificar EMPTY >
+  <!ELEMENT clasificación EMPTY>
+  <!ATTLIST clasificación edad (tp|8|12|16|18) #REQUIRED>
+  <!ELEMENT sinopsis (#PCDATA)>
+   <!ELEMENT director (#PCDATA)>
+  <!ELEMENT reparto (actor+)>
+    <!ELEMENT actor (#PCDATA)>
+  <!ELEMENT web (#PCDATA)>
+  <!ELEMENT cartel (#PCDATA)>
+    <!ATTLIST cartel imagenCartel ENTITY #IMPLIED>
+    <!ENTITY  imagenCartel SYSTEM "cartel.jpg" NDATA jpg >
+    <!NOTATION jpg SYSTEM "image/jpg" >
+  

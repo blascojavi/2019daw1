@@ -1,0 +1,23 @@
+<!ELEMENT editorial (informe)>
+<!ENTITY defaultVenta "NO_INFO">
+
+  <!ELEMENT informe (cabecera,datos)>
+    <!ELEMENT cabecera (empresa,tipoDocumento,descripcionTipoDocumento,fecha)>
+      <!ELEMENT empresa (#PCDATA)>
+      <!ELEMENT tipoDocumento (#PCDATA)>
+      <!ELEMENT descripcionTipoDocumento (#PCDATA)>
+      <!ELEMENT fecha (#PCDATA) >
+      
+      <!ELEMENT datos (regionNorte,regionCentro,regionSur)>
+        <!ELEMENT regionNorte (trimestres)>
+        <!ELEMENT regionCentro (trimestres)>
+        <!ELEMENT regionSur (trimestres)>
+            <!ELEMENT trimestres (trimestre1,trimestre2,trimestre3,trimestre4)>
+             <!ELEMENT trimestre1 EMPTY >
+             <!ATTLIST trimestre1 numero CDATA #FIXED "1" cantidadVendida CDATA "NO_INFO" >
+             <!ELEMENT trimestre2 EMPTY >
+             <!ATTLIST trimestre2 numero CDATA #FIXED "2" cantidadVendida CDATA "NO_INFO" >
+             <!ELEMENT trimestre3 EMPTY>
+             <!ATTLIST trimestre3 numero CDATA #FIXED "3" cantidadVendida CDATA "NO_INFO" >
+             <!ELEMENT trimestre4 EMPTY >
+             <!ATTLIST trimestre4 numero CDATA #FIXED "4" cantidadVendida CDATA "NO_INFO" >

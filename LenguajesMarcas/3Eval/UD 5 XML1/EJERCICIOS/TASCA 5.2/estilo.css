@@ -1,0 +1,11 @@
+professor {
+    width: 12rem;
+    border: 2px solid black; 
+    margin : 0 auto; 
+}
+departament{
+    background: black ; 
+    padding-right: 0px;
+    color: white; 
+    margin-left : 10px;
+}

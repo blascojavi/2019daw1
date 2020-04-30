@@ -1,0 +1,40 @@
+records:before{
+    content: "LISTADO DE CASOS : \A ";
+    white-space: pre;
+    margin: 1em;
+}
+
+record{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin : 1em;
+    width: 50%;
+    border: 1px solid black;
+    background: #ecfff3;
+}
+record:hover{
+    font-size: 1.1em;
+}
+record:nth-child(odd){
+    background: #c6ffe0;
+}
+countriesAndTerritories:before {
+    content: "País: ";
+}
+dateRep{
+    font-size: large;
+    font-weight: bold;
+    display: block;
+}
+cases:before{
+    content: "Casos confirmados: ";
+}
+deaths:before{
+    content: "Fallecidos: ";
+}
+
+day , month ,year,geoId,countryterritoryCode,popData2018 {
+   display: none;
+}

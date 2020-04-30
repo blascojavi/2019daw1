@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Libro SYSTEM "parte4.dtd">
+    
+<Libro Catalogo="inf">
+    <Titulo>Lenguaje de marcas</Titulo>
+    <Seccion>Informática</Seccion>
+    <SubSeccion>Codificación de datos</SubSeccion>
+    <Contenido>
+        <Capitulo materia="XHTML">
+            <Tema>Introducción a  XHTML</Tema>
+        </Capitulo>
+        <Separacion/>
+        <Capitulo>
+            <Tema>¿Que es XML?</Tema>
+        </Capitulo>
+    </Contenido>
+    <Copyright>LICENCIA copyLeft</Copyright>
+</Libro> 
+
+

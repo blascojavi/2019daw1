@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE NEWSPAPER SYSTEM "parte5.dtd">
+
+<NEWSPAPER>
+    <ARTICLE AUTHOR="Antonio Ferrer" EDITOR="MySelf" DATE="2020/April/15">
+        <HEADLINE>Introduction to Linux Mint</HEADLINE>
+        <BYLINE>Antonio Ferrer</BYLINE>
+        <LEAD>My self</LEAD>
+        <BODY>
+            The purpose of Linux Mint is to produce a modern, elegant and comfortable operating system 
+            which is both powerful and easy to use. Linux Mint is one of the most popular desktop Linux distributions and used by millions of people.
+            Some of the reasons for the success of Linux Mint are:
+            It works out of the box, with full multimedia support and is extremely easy to use.
+            It's both free of cost and open source.
+            It's community-driven.
+            Users are encouraged to send feedback to the project so that their ideas can be used to improve Linux Mint.
+            Based on Debian and Ubuntu, it provides about 30,000 packages and one of the best software managers.
+            It's safe and reliable. Thanks to a conservative approach to software updates, 
+            a unique Update Manager and the robustness of its Linux architecture, Linux Mint requires very little maintenance 
+            (no regressions, no antivirus, no anti-spyware...etc).
+        </BODY>
+        <NOTES>For more information go to https://www.linuxmint.com</NOTES>
+    </ARTICLE>
+    <ARTICLE AUTHOR="Pepito Flores">
+        <HEADLINE>How Does Coronavirus Spread?</HEADLINE>
+        <BYLINE>Pepito</BYLINE>
+        <LEAD>MD Hospital</LEAD>
+        <BODY>The virus most often spreads through people who have symptoms.
+            But it may be possible to pass it on without showing any signs. 
+            Some people who don't know they've been infected can give it to others. This is called asymptomatic spread. 
+            You can also pass it on before you notice any signs of infection, called presymptomatic spread.
+            Community Spread Sometimes, a person can trace how they got the virus because 
+            they know that they've been in contact with someone who's sick. 
+            In other cases, the cause is unknown. 
+            Community spread is when someone gets the virus without any known contact with a sick person.
+        </BODY>
+        <NOTES> Stay at home</NOTES>
+    </ARTICLE>
+</NEWSPAPER>
